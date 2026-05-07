@@ -1,0 +1,54 @@
+﻿//Bankacılık Hizmeti
+//Devlet Bankası
+//Özel Banka
+//Yurt Dışı Bankalar
+   //Devlet Bankası ise 
+          //B - Bireysel Kredi 
+          //K - KOBİ Kredisi 
+
+    //Seçim B bireylse ise
+    //Mesleği sorulsun. Eğer meslek beyaz yaka ise %4 üzerinden  
+
+Kredi alacağı paraya faiz uygulasın 6 ay
+//Eğer mavi yaka ise %2,55 üzerinden kredi alacağı paraya
+Faiz uygulasın 10 ay
+   //Eğer KOBİ bankası ise 
+    //Çalışan sayısı sorulsun 
+    //Çalışan sayısı 10'dan az ise %4 faiz 12 ay 
+    //10 ile 30 arasında ise %2 faize 18 ay 
+    //30 ile 50 arasında ise %1 faizle 24 ay kredi hesaplat yani aylık tutarı ve 
+
+Toplam ödemesi gereken tutarı yazdır.
+   //Eğer seçim özel banka ise 
+    //Banka adı seçiniz 
+    //G - Garanti
+    //Y - Yapı Kredi
+
+    //Garanti seçimi yaptı ise 
+    //Sadece konut kredi veriyoruz ve ödemeleri 5 yıl kadar yapıyoruz mesajı ver.
+    //Kullanıcı bunu kabul ederse ödeme menüsü gelsin 
+    //36 ay 
+    //48 ay 
+    //60 ay olarak 
+     //36 ay ise %2,69 faiz 
+     //48 ise %2,85 faiz 
+     //60 ise %2,98 faiz uygulasın. Aylık ödeme ve yıllık ödeme ve toplam ödeme yazdırsın
+
+//Yapı Kredi ise
+//Araç Kredisi //Taşıt Kredisi seçimini yapsın
+//Eğer araç kredi seçti ise
+//Müşteri tipini seçsin
+//Firma
+//Bireysel müşteri
+//Eğer firma ise alacağı
+//
+//Araç miktarı 50 ile 100 arasında faiz oranı %5 ve 21 ay olarak hesaplanacak ve
+Toplam tutarın %20'lik kısmı da KDV olarak kredi tutarına eklenecek
+//Araç miktarı 100 ile 150 arasında faiz oranı %4 ve 30 ay olarak hesaplanacak ve
+Toplam tutarın %18'lik kısmı da KDV olarak kredi tutarına eklenecek
+//Eğer bireysel müşteri ise
+//Kredi miktarları seçeneğini ver
+//1 milyon   %4 faiz
+//750 bin    %3 faiz
+//500 bin    %2 faiz  olarak seçenek sun ve en fazla 36 ay vade ile ver
+Aylık ve toplam ne kadar ödeyeceğini hesaplat

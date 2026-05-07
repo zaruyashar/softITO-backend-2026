@@ -1,0 +1,319 @@
+﻿Console.ReadLine(); -> input
+ReadKey(); -> input
+Console.WriteLine(); -> yeni satıra yazdır
+Console.Write(); -> aynı satırın devamına yazdırır
+
+Dışarıdan alınan TÜM inputlar STRING türündedir. Casting yap.
+
+Ondalık: float, double, decimal (bellekte kapladıkları alanlara göre küçükten büyüğe)
+
+ALG 1:
+Console.WriteLine("Tam adınızı girin: ");
+            string adSoyadi = Console.ReadLine();
+
+            Console.WriteLine("1. sınav notunuzu girin: ");
+            int sinavBir = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("2. sınav notunuzu girin: ");
+            int sinavİki = Convert.ToInt32(Console.ReadLine());
+
+            float ortalama = (sinavBir + sinavİki) / 2;
+            Console.WriteLine(adSoyadi + " adlı öğrencinin ortalaması: " + ortalama);
+            //Console.ReadLine();
+
+ALG 2:
+Console.WriteLine("Ürün adı: ");
+            string urunAd = Console.ReadLine();
+
+            Console.WriteLine("Ürün kodu: ");
+            int urunKod = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Ürün fiyatı: ");
+            float urunFiyat = Convert.ToSingle(Console.ReadLine());
+
+            Console.WriteLine("İndirim yüzdesi: ");
+            int indirimYuzde = Convert.ToInt32(Console.ReadLine());
+
+
+            float indirimliFiyat = urunFiyat - ((urunFiyat * indirimYuzde) / 100);
+
+            Console.WriteLine("Ürün adı: " + urunAd);
+            Console.WriteLine("Ürün kodu: " + urunKod);
+            Console.WriteLine("Ürün fiyatı: " + urunFiyat);
+            Console.WriteLine("İndirim yüzdesi: " + indirimYuzde);
+            Console.WriteLine("İNDİRİMLİ FİYAT: " + indirimliFiyat);
+
+ALG 3:
+int piSayisi = 3;
+
+            Console.WriteLine("Dairenin yarı çapı (r): ");
+            int yariCap = Convert.ToInt32(Console.ReadLine());
+
+            int daireAlan = piSayisi * yariCap * yariCap;
+            int daireCevre = 2 * piSayisi * yariCap;
+
+            Console.WriteLine("Dairenin alanı: " + daireAlan);
+            Console.WriteLine("Dairenin çevresi: " + daireCevre);
+
+ALG 4:
+Console.WriteLine("Digdörtgenin kısa kenarı: ");
+            int kisaKenar = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Digdörtgenin uzun kenarı: ");
+            int uzunKenar = Convert.ToInt32(Console.ReadLine());
+
+            int dikdörtgenAlan = kisaKenar * uzunKenar;
+            int dikdörtgenCevre = 2 * (kisaKenar + uzunKenar);
+
+            Console.WriteLine("Digdörtgenin alanı: " + dikdörtgenAlan);
+            Console.WriteLine("Digdörtgenin çevresi: " + dikdörtgenCevre);
+
+ALG 5:
+Console.WriteLine("Digdörtgenin kısa kenarı: ");
+            int kisaKenar = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Digdörtgenin uzun kenarı: ");
+            int uzunKenar = Convert.ToInt32(Console.ReadLine());
+
+            int dikdörtgenAlan = kisaKenar * uzunKenar;
+            int dikdörtgenCevre = 2 * (kisaKenar + uzunKenar);
+
+            Console.WriteLine("Digdörtgenin alanı: " + dikdörtgenAlan);
+            Console.WriteLine("Digdörtgenin çevresi: " + dikdörtgenCevre);
+
+ALG 6:
+Console.WriteLine("Bir tam sayı girin: ");
+            int userInput = Convert.ToInt32(Console.ReadLine());
+
+            if (userInput == 0)
+            {
+                Console.WriteLine("Sayı nötr.");
+            }
+            else if (userInput < 0)
+            {
+                Console.WriteLine("Sayı negatif.");
+            }
+            else
+            {
+                Console.WriteLine("Sayı pozitif.");
+            }
+
+ALG 7:
+float dueAmount = 0;
+            Console.WriteLine("Alışveriş tutarınız: ");
+            float cartTotal = Convert.ToSingle(Console.ReadLine());
+
+            if (cartTotal < 200)
+            {
+                dueAmount = cartTotal - (cartTotal * 0.1f);
+            }
+            else if (cartTotal >= 200 && cartTotal < 400)
+            {
+                dueAmount = cartTotal - (cartTotal * 0.15f);
+            }
+            else
+            {
+                dueAmount = cartTotal - (cartTotal * 0.2f);
+            }
+
+            Console.WriteLine("Ödemeniz gereken tutar: " + dueAmount);
+
+ALG 8:
+Random random = new Random();
+            int stepCount = 0;
+            int sysNumGuess = random.Next(1, 11);
+
+            spawnHere:
+
+            Console.WriteLine("Bir ile 10 arasında bir tam sayı girin: ");
+            int userInput = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\n");
+            stepCount++;
+
+            if (userInput < sysNumGuess)
+            {
+                Console.WriteLine("Daha büyük bir sayı girmeyi deneyin: ");
+                Console.WriteLine("\n");
+                goto spawnHere;
+            }
+            else if (userInput > sysNumGuess)
+            {
+                Console.WriteLine("Daha küçük bir sayı girmeyi deneyin: ");
+                Console.WriteLine("\n");
+                goto spawnHere;
+            }
+            else
+            {
+                Console.WriteLine("Tebrikler! Doğru bildiniz.");
+                Console.WriteLine("Sonuca " + stepCount + " adımda ulaştınız.");
+                Console.WriteLine("\n");
+            }
+
+ALG 9:
+float bonus = 0;
+            double dueAmount = 0;
+
+            spawnHere:
+
+            Console.WriteLine("Maaş bilginizi girin: ");
+            double salary = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Üretim adedinizi girin: ");
+            int prodCount = Convert.ToInt32(Console.ReadLine());
+
+            if (prodCount >= 1 && prodCount < 10)
+            {
+                bonus = prodCount * 5;
+                dueAmount = salary + bonus;
+            }
+
+            else if (prodCount >= 11 && prodCount < 25)
+            {
+                bonus = prodCount * 11;
+                dueAmount = salary + bonus;
+            }
+
+            else if (prodCount >= 26 && prodCount < 40)
+            {
+                bonus = prodCount * 17;
+                dueAmount = salary + bonus;
+            }
+            else if (prodCount >= 41)
+            {
+                bonus = prodCount * 30;
+                dueAmount = salary + bonus;
+            }
+
+            Console.WriteLine("Alacağınız toplam ödeme: " + dueAmount);
+            
+            Console.WriteLine("Yeni bir hesaplama yapmak istiyor musunuz (E/H): ");
+            char userPreference = Convert.ToChar(Console.ReadLine());
+            userPreference = char.ToUpper(userPreference);
+
+            if (userPreference == 'E')
+            {
+                goto spawnHere;
+            }
+
+ALG 10:
+spawnHere:
+
+            Console.WriteLine("Burç grubunuzu seçin.");
+            Console.WriteLine("Toprak");
+            Console.WriteLine("Ateş");
+            Console.WriteLine("Su");
+            Console.WriteLine("Hava");
+            string selection1 = Console.ReadLine();
+
+            switch (selection1)
+            {
+                case "Toprak":
+                    Console.WriteLine("Burcunuzu seçin: ");
+                    Console.WriteLine("boğa");
+                    Console.WriteLine("başak");
+                    Console.WriteLine("oğlak");
+                    string selection2 = Console.ReadLine();
+
+                    if (selection2 == "boğa")
+                    {
+                        Console.WriteLine("Zengin oldunuz!");
+                    }
+                    break;
+
+                case "Ateş":
+                    Console.WriteLine("Burcunuzu seçin: ");
+                    Console.WriteLine("koç");
+                    Console.WriteLine("aslan");
+                    Console.WriteLine("yay");
+                    string selection3 = Console.ReadLine();
+
+                    if (selection3 == "aslan")
+                    {
+                        Console.WriteLine("Altın almanız lazım.");
+                    }
+                    break;
+
+                case "Su":
+                    Console.WriteLine("Burcunuzu seçin: ");
+                    Console.WriteLine("yengeç");
+                    Console.WriteLine("akrep");
+                    Console.WriteLine("balık");
+                    string selection4 = Console.ReadLine();
+
+                    if (selection4 == "akrep")
+                    {
+                        Console.WriteLine("Takmayın kafanıza...");
+                    }
+                    break;
+
+                case "Hava":
+                    Console.WriteLine("Burcunuzu seçin: ");
+                    Console.WriteLine("ikizler");
+                    Console.WriteLine("terazi");
+                    Console.WriteLine("kova");
+                    string selection5 = Console.ReadLine();
+
+                    if (selection5 == "kova")
+                    {
+                        Console.WriteLine("Biraz sakin yav. :)");
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Hatalı seçim yaptınız. Tekrar deneyin.");
+                    goto spawnHere;
+            }
+
+ALG 11:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Uygulama1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            spawnHere:
+
+            Console.WriteLine("Bir züccaciye ürün kategorisi seçin (rakamı girin).");
+            Console.WriteLine("1 (Mutfak Gereçleri)");
+            Console.WriteLine("2 (Banyo Gereçleri)");
+            Console.WriteLine("3 (Aksesuar)");
+            int selection1 = Convert.ToInt32(Console.ReadLine());
+
+            switch (selection1)
+            {
+                case 1:
+                    Console.WriteLine("Ürün fiyatını girin: ");
+                    float price = Convert.ToSingle(Console.ReadLine());
+
+                    Console.WriteLine("Defolu ürün tercih ederseniz daha uyguna alışveriş yapabilirsiniz. Ürün defolu olsun mu (E/H): ");
+
+                    char userPreference = Convert.ToChar(Console.ReadLine());
+                    userPreference = char.ToUpper(userPreference);
+
+                    if (userPreference == 'E')
+                    {
+                        price = price * 0.7f;
+                        Console.WriteLine("Ödemeniz gereken tutar: " + price);
+                    }
+                    else
+                    {
+                        price = price * 0.97f;
+                        Console.WriteLine("Ödemeniz gereken tutar: " + price);
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Bir hata oluştu. Tekrar deneyin.");
+                    goto spawnHere;
+            }
+        }
+    }
+}
+
+ALG 12:
