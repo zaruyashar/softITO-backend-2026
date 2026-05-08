@@ -433,6 +433,7 @@ namespace Loops
 
 
             // ALG 20
+            /*
             string finalResult = "";
             bool status = true;
 
@@ -449,7 +450,7 @@ namespace Loops
                 finalResult += c;
             }
             Console.WriteLine("Girdiğiniz karakterler: " + finalResult);
-            
+            */
 
 
             // ALG 21
@@ -468,6 +469,131 @@ namespace Loops
             Console.WriteLine("Toplam: " + grandTotal);
             */
 
+
+            // ALG 22
+            /*
+            int occurrenceCounter = 0;
+            int stepCount = 0;
+
+            Console.WriteLine("1 ile 100 arasında bir sayı girin: ");
+            int userInput = Convert.ToInt32(Console.ReadLine());
+
+            Random random = new Random();
+
+            while (occurrenceCounter != 2)
+            {
+                stepCount++;
+
+                int rnd = random.Next(1, 101);
+                Console.Write(rnd + "  ");
+
+                if (rnd == userInput)
+                {
+                    occurrenceCounter++;
+                }
+            }
+            Console.WriteLine("\n");
+            Console.WriteLine($"Sayı {stepCount}. adımda 2. kez tespit edildi. İşleminiz tamamlandı.");
+            */
+
+
+            // ALG 23
+            /*
+            int grandTotal = 0;
+            int userInput = 0;
+
+            do
+            {
+                Console.WriteLine("Bir tam sayı girin: ");
+                userInput = Convert.ToInt32(Console.ReadLine());
+
+                grandTotal += userInput;
+            }
+            while (userInput != 0);
+
+            Console.WriteLine($"Sayıların toplamı: {grandTotal}");
+            */
+
+
+            // ALG 24
+            /*
+            string userInput = "";
+            int vowelCount = 0;
+            int consonantCount = 0;
+            int numCount = 0;
+            int specialCharCount = 0;
+
+            Console.WriteLine("Harf, rakam ve özel karakter içeren bir ifade girin: ");
+            userInput = Console.ReadLine();
+
+            foreach (char c in userInput)
+            {
+                // numbers
+                if (c >= '0' && c <= '9')
+                {
+                    numCount++;
+                }
+                // vowels
+                else if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' ||
+                         c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+                {
+                    vowelCount++;
+                }
+                // consonants
+                else if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+                {
+                    consonantCount++;
+                }
+                // special characters
+                else
+                {
+                    specialCharCount++;
+                }
+            }
+            Console.WriteLine($"Sesli harf sayısı: {vowelCount}");
+            Console.WriteLine($"Sessiz harf sayısı: {consonantCount}");
+            Console.WriteLine($"Rakam sayısı: {numCount}");
+            Console.WriteLine($"Özel karakter sayısı: {specialCharCount}");
+            */
+            /*
+            string sesli = "aeıioöuü";
+            string sessiz = "bcçdfghjklmnprsştvyz";
+            string rakam = "0123456789";
+            string ozelkarakter = "";
+            int sayacsessiz = 0;
+            int sayacsesli = 0;
+            int sayacrakam = 0;
+            int sayac = 0;
+
+            Console.Write("Bir metin giriniz :");
+            string metin = Convert.ToString(Console.ReadLine());
+
+            foreach (char karakter in metin)
+            {
+                foreach (char sessizharf in sessiz)
+                    if (karakter == sessizharf)
+                    {
+                        sayacsessiz++;
+                    }
+                foreach (char sesliharf in sesli)
+
+                    if (karakter == sesliharf)
+                    {
+                        sayacsesli++;
+                    }
+                foreach (char rakamlar in rakam)
+                    if (karakter == rakamlar)
+                    {
+                        sayacrakam++;
+                    }
+            }
+            Console.WriteLine("metin uzunluğu :" + metin.Length);
+            Console.WriteLine("sessiz harf sayısı :" + sayacsessiz);
+            Console.WriteLine("sesli harf sayısı :" + sayacsesli);
+            Console.WriteLine("Rakam sayısı :" + sayacrakam);
+            Console.WriteLine("Özel karakter sayısı :" + ((metin.Length) - (sayacrakam + sayacsesli + sayacsessiz)));
+            Console.ReadLine();
+            */
 
         }
     }
