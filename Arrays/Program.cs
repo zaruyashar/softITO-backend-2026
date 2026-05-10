@@ -401,7 +401,34 @@ namespace Arrays
                 Console.WriteLine("Girdiğiniz sayı asaldır.");
             }
             */
-            
+
+
+            // Fibonacci - calculates up till n = 46
+            /*
+            Console.WriteLine("Bir N değeri girin: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            if (n <= 0)
+            {
+                Console.WriteLine("Geçerli bir pozitif tam sayı girmelisiniz.");
+            }
+
+            else
+            {
+                int a = 1;
+                int b = 1;
+                int nthVal = 1;
+
+                for (int i = 3; i <= n; i++)
+                {
+                    nthVal = a + b;
+                    a = b;
+                    b = nthVal;
+                }
+
+                Console.WriteLine($"Fibonacci dizisindeki {n}. terim: {nthVal}");
+            }
+            */
 
 
         }
