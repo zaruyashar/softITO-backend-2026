@@ -368,6 +368,42 @@ namespace Arrays
             */
 
 
+            // HW
+            /*
+            // Made for simple use cases. Current 'for' loop algorithm inefficient for larger user inputs (like '1000000').
+            bool IsPrime = true;
+
+            // Num to be checked:
+            Console.WriteLine("Pozitif bir tam sayı girin: ");
+            int userInput = Convert.ToInt32(Console.ReadLine());
+
+            // If num == 1 or less, never make it to the 'for' loop:
+            if (userInput <= 1)
+            {
+                Console.WriteLine("Girdiğiniz sayı asal değildir veya negatif bir sayıdır.");
+                IsPrime = false;
+            }
+
+            // If (num % anything other than (2 & num)) produces a result:
+            for (int i = 2; i < userInput; i++)
+            {
+                if (userInput % i == 0)
+                {
+                    IsPrime = false;
+                    Console.WriteLine("Girdiğiniz sayı asal değildir.");
+                    break;
+                }
+            }
+
+            // If num is indeed a prime num:
+            if (IsPrime is true)
+            {
+                Console.WriteLine("Girdiğiniz sayı asaldır.");
+            }
+            */
+            
+
+
         }
     }
 }
