@@ -1,0 +1,375 @@
+﻿//geriye deger döndüren parametresiz bir metot
+public static int Hesapla()
+{
+int sayi = 5;
+int sayi2 = 7;
+int sonuc = sayi + sayi2;
+return sonuc;
+}
+
+static void Main(string[] args)
+{
+int Toplam=Hesapla();
+
+//  Console.WriteLine("hesaplama sonucu :" + Hesapla());
+Console.WriteLine("toplam sonucu : "+Toplam);
+Console.ReadLine();
+
+//metotlar
+//programların hazırlanması sırasında aynı işlkemlerin  tekrar tekrar yazılmasına engel olmak amacı ile  bir kere metot halinde oluşturup yazılım içerisinde ihtiyaç duyduguz hallerde istedigimiz kadar kullanabiliriz.
+
+//metot kullanımında dikkat etmemiz gereken kurallar 
+//main iki kez kullanılamaz 
+//metot isimler sayılsal başlamaz
+//küçük büyük harf duyarlıdır
+//metot isimlerinde boşluk olmasın 
+//metotolar parametre girdilerine dikkat edelim 
+
+
+//metotlar ikiye ayrılır 
+//geriye değer döndüren metotlar (return) 
+//geriye değer döndürmeyen metotlar (void)
+
+//bu metotlar kendi içerisinde 2 ye ayrılır 
+//parametreli metot 
+//parametresiz metot 
+
+
+
+//metotları 4 şekilkde kullanabilirz
+//1 geriye deger döndüren parametresiz metot(return) 
+//2 geriye deger döndüdren parametreli metot(return)
+
+//3 geri deger döndürmeyen  parametresiz metot (void)
+//4 geri deger döndürmeyen parametreli metot (void)
+
+//erişim belirteçleri 
+//public :herkes tarafından erişlebilir 
+//private :özel herkes trafından erişilemez 
+//protected :kalıtım ile ilgili işlemlerde kullandıgımız korunaklı bir erişim seviyesidir
+//internal :projenin içerisinde erişim sağlamak için ullandıgımız erişim seviyesidir.
+
+
+Console.WriteLine("1. notunuzu giriniz");
+//int not1=Convert.ToInt32(Console.ReadLine());
+string not1 = Console.ReadLine();
+Console.WriteLine("2. notunuzu giriniz");
+double not2 = Convert.ToDouble(Console.ReadLine());
+
+//1.metot cagırma deger atama
+//double Notortalama = Ortalama(50,75.7);
+//Console.WriteLine("ortalamaınız:"+Notortalama);
+
+
+//2. gösterim
+Console.WriteLine("not ortalaması : "+Ortalama(not1,not2));
+
+
+Console.ReadLine();
+}
+
+//geriye deger döndüren 2 parametreli metot
+public static double Ortalama(double not,double not2)
+{
+double sonuc = (not + not2) / 2d;
+return sonuc;
+}
+
+
+public static int Zam(int fiyat,int tip)
+{
+if (tip ==1)
+{
+fiyat += fiyat * 10 / 100;
+return fiyat;
+}
+else if(tip==2)
+{
+fiyat += fiyat * 12 / 100;
+return fiyat;
+}
+else
+{
+return fiyat + 10;
+}
+}
+
+public static int indirim(int fiyat, int tip)
+{
+if (tip ==1)
+{
+fiyat -= fiyat * 10 / 100;
+return fiyat;
+}
+else if (tip ==2)
+{
+fiyat -= fiyat * 12 / 100;
+return fiyat;
+}
+else
+{
+return fiyat - 10;
+}
+}
+
+public static void Kdv(int tutar)
+{
+Console.WriteLine("çalışanmısınız yokse emekli mi");
+string durum=Console.ReadLine();
+if (durum == "çalışan")
+{
+tutar += tutar * 18 / 100;
+Console.WriteLine("kdvli tuttar : "+tutar);
+}
+else
+{
+tutar += tutar * 8 / 100;
+Console.WriteLine("kdvli tuttar : " + tutar);
+}
+}
+
+static void Main(string[] args)
+{
+//fiyat  üzerinde indirim ve zam yapan 2 metot  olucak return parametreli (fiyat,ürün tip)
+//kdv hesaplayan metot   1.metotdan gelen fiyata kdv hesaplatcam void ile
+
+  Console.WriteLine("Hediyelik eşya");
+  Console.WriteLine("1- Çicek tarzı ");
+  Console.WriteLine("2- Biblo Tarzı");
+  Console.WriteLine("3- balon tarzı ");
+  Console.WriteLine("seçiminizi yapınız");
+  int secim = Convert.ToInt32(Console.ReadLine());
+  Console.WriteLine("Fiyat giriniz");
+  int fiyat=Convert.ToInt32(Console.ReadLine());
+  int hesap = 0;
+  switch (secim)
+  {
+      case 1:
+          Console.WriteLine("çicek");
+
+          hesap = Zam(fiyat,secim);
+          Kdv(hesap);
+
+
+
+
+
+          break;
+
+      case 2:
+          Console.WriteLine("biblo");
+          hesap =indirim(fiyat, secim);
+          Kdv(hesap);
+
+          break;
+      case 3:
+
+          hesap = indirim(fiyat, secim);
+          Kdv(hesap);
+
+
+          break;
+
+      default:
+          break;
+  }
+
+
+  Console.ReadLine();
+
+
+
+
+
+
+  public static int BireyselHesap(int gelir, string sgk, int tutar)
+{
+
+        if(sgk=="bağkur" && gelir > 40000)
+        {
+            tutar += tutar * 4 / 100;
+            return tutar;
+        }
+        else
+        {
+            tutar += tutar * 6 / 100;
+            return tutar;
+        }
+
+    }
+
+
+    public static void aylik(int kreditutar)
+    {
+        Console.WriteLine("kaç yada ödeme istersiniz");
+        int ay = Convert.ToInt32(Console.ReadLine());
+
+        double aylik = kreditutar / ay;
+        Console.WriteLine("aylık ödemeniz gereken tutar : "+aylik);
+
+    }
+
+
+
+
+    public static void AnaMenu()
+    {
+        try
+        {
+
+
+
+
+            Console.WriteLine("Bankamıza hoşgeldiniz");
+            Console.WriteLine("B- Bireysel Kredi");
+            Console.WriteLine("K-Konut kredisi");
+            char durum = Convert.ToChar(Console.ReadLine());
+
+            switch (durum)
+            {
+                case 'B':
+                    Console.WriteLine("Gelirinizi giriniz");
+                    int gelir = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("sgk durumunu giriniz");
+                    string sgk = Console.ReadLine();
+                    Console.WriteLine("kredi tutarını giriniz");
+                    int tutar = Convert.ToInt32(Console.ReadLine());
+
+                    int KrediTutar = BireyselHesap(gelir, sgk, tutar);
+                    Console.WriteLine("ödemeniz gereken kredi tutarı" + KrediTutar);
+                    aylik(KrediTutar);
+
+
+
+
+                    break;
+
+                case 'K':
+
+
+
+
+
+                    break;
+
+
+            }
+        }
+        catch
+        {
+            Console.WriteLine("Hata yakalnadı");
+          
+        }
+        finally
+        {
+            Console.WriteLine("Tekrar denemek istermisiniz");
+
+        }
+
+
+
+
+
+    }
+
+
+
+    static void Main(string[] args)
+    {
+        //hata yakalama  try catch 
+
+        Console.WriteLine("bankamıza hoşgeldiniz");
+        AnaMenu();
+
+         Console.ReadLine();
+
+
+
+    }
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp9
+{
+internal class Program
+{
+static int toplam = 0;
+public static int icecek()
+{
+Console.WriteLine("su 20");
+Console.WriteLine("cola 100");
+Console.WriteLine("ayran 50");
+
+        string icecekSecim = Console.ReadLine();
+        if (icecekSecim == "cola")
+        {
+            toplam += 100;
+            return toplam;
+        }
+        else if (icecekSecim == "ayran")
+        {
+            toplam += 50;
+            return toplam;
+        }
+        else
+        {
+            toplam += 20;
+            return toplam;
+        }
+
+
+
+    }
+    public static void anaMenu()
+    {
+    git:
+        Console.WriteLine("Makarna -m");
+        Console.WriteLine("Çorba -ç");
+        string secim = Console.ReadLine();
+
+        if (secim == "m" || secim == "M")
+        {
+            toplam += 500;
+        }
+        else
+        {
+            toplam += 150;
+            Console.WriteLine("Toplam tutar: " + toplam);
+        }
+        Console.WriteLine("İçecek ister misiniz");
+        string durum = Console.ReadLine();
+        if (durum == "evet")
+        {
+            icecek();
+
+            Console.WriteLine("su ister misiniz");
+            string ss = Console.ReadLine();
+            if (ss == "evet")
+            {
+                toplam += 20;
+            }
+
+            Console.WriteLine("Toplam ödemeniz gereken tutar: " + toplam);
+        }
+        Console.WriteLine("Alışverişe dvam etmek ister misiniz");
+        string devam = Console.ReadLine();
+        if (devam == "evet")
+        {
+            goto git;
+        }
+    }
+    static void Main(string[] args)
+    {
+        anaMenu();
+    }
+}
+}

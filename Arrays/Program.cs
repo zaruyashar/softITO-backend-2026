@@ -431,6 +431,55 @@ namespace Arrays
             */
 
 
+            // ALG 13
+            /*
+            string[] arr = { };
+            string isBigger = "";
+            int itemIndex = 0;
+
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine($"{i}. kelimeyi girin: ");
+                string userInput = Console.ReadLine();
+
+                if (userInput.Length > isBigger.Length)
+                {
+                    isBigger = userInput;
+                    itemIndex = i;
+                }
+            }
+
+            int charCount = isBigger.Length;
+
+            Console.WriteLine("\n");
+            Console.WriteLine($"En uzun metin: {isBigger}");
+            Console.WriteLine($"En uzun metnin indisi: {itemIndex}");
+            Console.WriteLine($"En uzun metnin karakter sayısı: {charCount}");
+            */
+
+
+            // ALG 14
+            /*
+            int[] arr = new int[10];
+
+            Random random = new Random();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = random.Next(1,500);
+            }
+
+            int max = arr.Max();
+            int min = arr.Min();
+
+            Console.WriteLine($"Dizinin en büyük elemanı: {max}");
+            Console.WriteLine($"Dizinin en küçük elemanı: {min}");
+            */
+
+
+
+
+
         }
     }
 }

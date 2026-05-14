@@ -1,7 +1,9 @@
 <Solution>
   <Project Path="Arrays/Arrays.csproj" Id="92184c5e-2a22-47a0-8169-ad2ee17ff788" />
   <Project Path="Banka/Banka.csproj" Id="1b7d8a2b-f11f-4670-9321-c578e05007b1" />
+  <Project Path="Functions/Functions.csproj" Id="b70454b3-2a67-4887-b491-90cd00e80acd" />
   <Project Path="Intro/Intro.csproj" Id="38a10dbf-5b98-4445-8d44-90e6e23b9046" />
   <Project Path="Loops/Loops.csproj" Id="036b47b2-0876-43a2-b1aa-70c697574aea" />
+  <Project Path="MyMiniConsoleRestaurant/MyMiniConsoleRestaurant.csproj" Id="017aac0d-d8fb-4334-9057-5af4e5e91f0a" />
   <Project Path="Züccaciye/Züccaciye.csproj" Id="0e584541-af27-4c18-8c79-784e01613dda" />
 </Solution>
