@@ -5,5 +5,6 @@
   <Project Path="Intro/Intro.csproj" Id="38a10dbf-5b98-4445-8d44-90e6e23b9046" />
   <Project Path="Loops/Loops.csproj" Id="036b47b2-0876-43a2-b1aa-70c697574aea" />
   <Project Path="MyMiniConsoleRestaurant/MyMiniConsoleRestaurant.csproj" Id="017aac0d-d8fb-4334-9057-5af4e5e91f0a" />
+  <Project Path="OOP/OOP.csproj" Id="84eadfa9-26b3-4096-a588-87a0408f4aac" />
   <Project Path="Züccaciye/Züccaciye.csproj" Id="0e584541-af27-4c18-8c79-784e01613dda" />
 </Solution>

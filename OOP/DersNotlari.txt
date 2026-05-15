@@ -1,0 +1,740 @@
+﻿public static void Odeme(string odemetipi)
+{
+Console.WriteLine("Ödeme kart ile gerçekleşicek");
+}
+public static void Odeme(string kupon,string odemetipi)
+{
+Console.WriteLine("hem kupon hemde ödeme için kullanılcaktır.");
+}
+
+static void Main(string[] args)
+{
+
+  Odeme("kart");
+  Odeme("kart","kupon");
+
+
+
+
+
+
+  //metotlara aşırı yükleme (metot overloading)
+
+  //Metotların asırı yüklenmesi kıssaca aynı methodun farklı şekillerden tanımlanarak farklı işlşeri aynı anda yapabilmesidir .Bu durumma methodların aşırı yüklenmesi denir .Aşırı yüklemede metot ismi aynı fakat paramtreleri biriinden farklı olması gerekmektedir .
+
+  //dijital ödeme sistemleri 
+  //kartla ödeme ,kupon,indirim,
+  //konum  kullanamcagımız 
+}
+
+
+
+
+public static void Hesap(int fiyat,int kupon)
+{
+fiyat -= kupon;
+Console.WriteLine("araç Bedeli : "+fiyat);
+}
+public static void Hesap(int fiyat, string kupon)
+{
+
+ Console.WriteLine("araç Bedeli : " + fiyat);
+}
+
+public static void Hesap(int fiyat, int indirim,int kamnpanya)
+{
+fiyat -= indirim;
+fiyat -= kamnpanya;
+Console.WriteLine("araç Bedeli : " + fiyat);
+}
+
+static void Main(string[] args)
+{
+Console.WriteLine("1-Hyundai");
+Console.WriteLine("2-Renault");
+int secim = Convert.ToInt32(Console.ReadLine());
+
+ if (secim == 1)
+ {
+     Console.WriteLine("Fiyatı giriniz");
+     int fiyat = Convert.ToInt32(Console.ReadLine());
+     Console.WriteLine("kupon  değeri gir");
+     int kupon = Convert.ToInt32(Console.ReadLine());
+     Hesap(fiyat, kupon);
+ }
+ else
+ {
+     Console.WriteLine("Fiyatı giriniz");
+     int fiyat = Convert.ToInt32(Console.ReadLine());
+     Console.WriteLine("indirim  değeri gir");
+     int kupon = Convert.ToInt32(Console.ReadLine());
+     Console.WriteLine("kamnpanya tutar giriniz");
+     int kampanyaTutar = Convert.ToInt32(Console.ReadLine());
+     Hesap(fiyat,kupon,kampanyaTutar);
+ }
+
+ Console.ReadLine();
+
+
+
+
+
+
+ //if ,döngüleri,dizileri,metotlar,hata yakalama
+//Object Oriented Programming --oop
+//(Nesneye yönelimli programla)
+//verileri işleyen ve nesneleler ile  verilen birimler içinde gruplandırarak yazılım geliştirmeyi sağlayan yaklaşımdır .karmaşık projeleri daha modüler hale getirir.kodun yeniden kullanılabilirliğini ve bakımını aynı zamanda güvenliğinide artırılmasını sağlar .
+// temel kvramları
+//class(sınıf):nesnelerin nasıl oluşturulacagını hangi görevleri hangi özelliklerle yapacagını tanımlayan şablondur diyebilir.
+//classlar soyut bir kavramdır
+//nesneler(object)sınıftan türetilen verileri ve işlevleri barındırsan somut örnek
+
+//oop in temel prensipleri 4 tane temel ilkesi vardır
+// 1) Kapsülleme(encapsulation):verilerin ve yöntemlerin dış müdahelelerden korrunarak nesne içinde saklanması
+//2)Kalıtım (Inheritance):bir sınıfın baska bir sınıfın özelliklerinive davranışalarını  miras alabilmesidir.
+//3)Poliformizm(çok biçimlilik):nesnelerin farklı durumlarda farklı şekillerden davranmasıdır.
+//4)soyutlama (abstraction):karmaşık detayların gizlenerek sadece gerekli işlevlerin gösterilmesini sağlar :
+//abstract ,sealed,comstructor ,destructor,enum
+
+//modülerlik:Kodun anlaşılması ve hata ayıklamayı kolaştırır.
+//Yeniden kullanılabilirlik:kod parçaları farklı projelerde kullanabiliriz.
+//Güvenlik:kapsülleme ile verilerimizin korunurlugunu artırılır.
+//bakım kolaylıgı :büyük sistemlerde değişiklik yapmayı basitleştirir.
+
+//sınıflar oop en önemli ögelerinden biridir.sınıflar sayesinde programlarımızı parçalara bölüp karmaşıklıgı azalıyoruz
+//sınıf soyut bir kavramdır. nesne üsretiriz.nesneler somut  bir kavramdır .
+//özelliklerim (field ),davranışlar metotlarımız :
+//
+
+//class                  //metot            özellik                   olay
+
+//motorlu taşıtlar      arabanın çalışması    renk,marka,fiyat        arabanın bozulması
+
+//ÇİCEK                YAPISI,FOTOSENTEZ              RENK,KOKUSU,             SOLAR
+
+//MT ARABA=NEW MT();
+
+
+
+
+
+
+
+Console.WriteLine("1- otomobil");
+Console.WriteLine("2-Kamyon");
+Console.WriteLine("3-motosiklet");
+int secim = Convert.ToInt32(Console.ReadLine());
+
+if (secim == 1)
+{
+MT tasit = new MT();
+tasit.Adi = "otomobil";
+tasit.renk = "gri";
+tasit.marka = "Renault";
+tasit.yakitDurumu = "Benzin";
+tasit.vitesdurumu = "Otomatik";
+tasit.fiyat = 8000;
+tasit.tekerleksayisi = 4;
+
+ Console.WriteLine("Taşıt adı : "+tasit.Adi);
+ Console.WriteLine("Taşıt renk : "+tasit.renk);
+ Console.WriteLine("Taşıt Marka"+tasit.marka);
+}
+
+
+
+
+
+
+
+Console.WriteLine("1- otomobil");
+Console.WriteLine("2-Kamyon");
+Console.WriteLine("3-motosiklet");
+int secim = Convert.ToInt32(Console.ReadLine());
+
+if (secim == 1)
+{
+MT tasit = new MT();
+tasit.Adi = "otomobil";
+tasit.renk = "gri";
+tasit.marka = "Renault";
+tasit.yakitDurumu = "Benzin";
+tasit.vitesdurumu = "Otomatik";
+tasit.fiyat = 8000;
+tasit.tekerleksayisi = 4;
+
+   Console.WriteLine("Taşıt adı : "+tasit.Adi);
+   Console.WriteLine("Taşıt renk : "+tasit.renk);
+   Console.WriteLine("Taşıt Marka"+tasit.marka);
+}
+else if (secim == 2)
+{
+MT kamyon = new MT();
+Console.WriteLine("taşıt adını giriniz");
+kamyon.Adi = Console.ReadLine();
+Console.WriteLine("Renk");
+kamyon.renk = Console.ReadLine();
+Console.WriteLine("fiyat");
+kamyon.fiyat=Convert.ToDouble(Console.ReadLine());
+
+   Console.WriteLine(" adı  : "+kamyon.Adi);
+   Console.WriteLine("rengii"+kamyon.renk);
+   Console.WriteLine("fiyat : "+kamyon.fiyat);
+}
+
+Console.ReadLine();
+
+
+internal class MT
+{
+
+ //NESNELERE FİEDL ALAN ÖZELLİK 
+ public int mtNo;
+ public string Adi;
+ public string marka;
+ public double fiyat;
+ public string renk;
+ public int tekerleksayisi;
+ public string vitesdurumu;
+ public string yakitDurumu;
+}
+
+
+
+
+
+
+
+
+
+internal class Personel
+{
+public int PNo;
+public string AdSoyad;
+public int Yas;
+public string Mezuniyet;
+public double Maas;
+public double Prim;
+
+  public double Zam(string mezun,double maas)
+{
+    Console.WriteLine("Tecrübeniz nekadar");
+    int deneyim = Convert.ToInt32(Console.ReadLine());
+    if(mezun=="lisans" && deneyim > 5)
+    {
+        maas += maas*30 / 100;
+        return maas;
+    }
+    else
+    {
+        maas += maas * 10 / 100;
+        return maas;
+    }
+
+}
+
+
+public double PrimHesap(double maas,double prim)
+{
+    if (maas > 80000)
+    {
+        maas += prim;
+        maas += 15000;
+        return maas;
+    }
+    else
+    {
+        maas += prim;
+        maas += 12000;
+        return maas;
+    }
+}
+
+
+
+
+static void Main(string[] args)
+{
+
+Personel per=new Personel();
+Console.WriteLine("Adsoyad giriniz");
+per.AdSoyad = Console.ReadLine();
+Console.WriteLine("Yaş giriniz");
+per.Yas = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Maaş giriniz");
+per.Maas=Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Prim giriniz");
+per.Prim=Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Mezuniyet giriniz");
+per.Mezuniyet = Console.ReadLine();
+
+ Console.WriteLine("Ad soyad : "+per.AdSoyad);
+ Console.WriteLine("Yaş : "+per.Yas);
+ Console.WriteLine("Maaş"+per.Maas);
+ Console.WriteLine("Prim : "+per.Prim);
+
+ double tutar = per.Zam(per.Mezuniyet,per.Maas);
+ tutar = per.PrimHesap(tutar,per.Prim);
+
+ Console.WriteLine("zamlı ve prim eklenmiş maaş tuatarınız : "+tutar);
+
+ Console.ReadLine();
+}
+
+
+
+
+
+
+//PRİVATE (ÖZEL) ERİŞİM SEVİYESİ :OOP EN KISITILI OLARAK KULANDIGIMIZ ERİŞİM SEVİYESİDİRÇbİR SINIFIN ÜYESİ PRİVATE OLARAK TANIMLANDIGINDA  BU ÜYEYE SADECE TANIMLANDIGI SINIF İÇERİSİNDEN ERİŞİELEBİLİR .DIŞ SINIFLAR ALT SINIFLAR VEYA AYNI PROGRAM İÇERİSİNDE DİĞER KODLAMA ALANLARI PRİVATE OLAN ALANA ERİŞİM SAĞLAYAMAZ
+
+//GİZLİLİK:VERİ GİZLEME  VE KAPSÜLLEME PRESİNPLERİNİ SAĞLAR.
+//SINIF İÇİ KAPSAM METTOLAR VEYA HASAS VERİLER  GÜVENİLİRLİGİ SAĞLAR
+//KONTROL VE GÜVEN SAĞLAMIŞ OLUR DİYEBİLİRZ
+
+//kapsüleme (ancapsulation)
+//private olarak tanımlanmış field alanlarımızın dış dünyaya açılmasını sağlar.
+
+//veri gvenliği :sınıf içindeki field dışardan doğrudan erişilip değiştirilmesini engelleriz önler
+//doğrulama ve denetleme :veri atanırken set  veri okunurken get komutları  kontrol mekanizması sağlar
+//esneklik:kodun iç yapısı değiştirildiginde dışarıdaki kodların etkilenmesi engellenir
+
+
+
+
+
+internal class Telefon
+{
+public string abonmanDurumu;
+public string firmaName;
+public int firmaId;
+public int phoneNumber;
+public int fiyat;
+public string faturaDurumu;
+public string tercih;
+public double kdvUygula(string abonmanDurumu, double tutar)
+{
+if (abonmanDurumu == "E")
+{
+Console.WriteLine("Ödediğiniz tutara %18KDV uygulandı.");
+return tutar * 18 / 100;
+}
+else
+{
+return 0;
+}
+}
+public double kdvUygula(string faturaDurumu, double tutar,int paketUcreti)
+{
+if (faturaDurumu == "E")
+{
+Console.WriteLine("Ödediğiniz tutara paket ücreti eklendi");
+return tutar + paketUcreti;
+}
+else
+{
+return 0;
+}
+}
+
+    public double vergiUygula(double tutar)
+    {
+        return (tutar * 4 / 100);
+    }
+    public double vergiUygula(double tutar,string firmaName)
+    {
+        if(firmaName =="Türk Telekom")
+        {
+            return (tutar * 97 / 100);
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    public void veriAl()
+    {
+        Console.WriteLine("Telefon Tercihi Sabit(S) - Mobile(M)");
+        tercih = Console.ReadLine(); 
+        Console.WriteLine("abonmanDurumu Giriniz");
+        abonmanDurumu = Console.ReadLine();
+        Console.WriteLine("firmaId Giriniz");
+        firmaId = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("firmaName Giriniz");
+        firmaName =Console.ReadLine();
+        Console.WriteLine("phoneNumber Giriniz");
+        phoneNumber = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("faturaDurumu Giriniz");
+        faturaDurumu = Console.ReadLine();
+        Console.WriteLine("fiyat Giriniz");
+        fiyat = Convert.ToInt32(Console.ReadLine());
+
+    }
+    public void yazdir()
+    {
+        veriAl();
+        switch (tercih)
+        {
+            case "S":
+                Console.WriteLine("Abonman Durumu: " + abonmanDurumu);
+                Console.WriteLine("Firma İsmi: " + firmaName);
+                Console.WriteLine("Firma ıd: " + firmaId);
+                Console.WriteLine("Telefon Numarası: " + phoneNumber);
+                Console.WriteLine("Fiyat: " + fiyat);
+                Console.WriteLine("Fatura Durumu: " + faturaDurumu);
+                double tutar = kdvUygula(abonmanDurumu, fiyat);
+                double vergiliTutar = vergiUygula(tutar);
+                Console.WriteLine("Son fiyat Sabit Phone: " + vergiliTutar);
+                break;
+            case "M":
+                Console.WriteLine("Abonman Durumu: " + abonmanDurumu);
+                Console.WriteLine("Firma İsmi: " + firmaName);
+                Console.WriteLine("Firma ıd: " + firmaId);
+                Console.WriteLine("Telefon Numarası: " + phoneNumber);
+                Console.WriteLine("Fiyat: " + fiyat);
+                Console.WriteLine("Fatura Durumu: " + faturaDurumu);
+                double tutarMobile = kdvUygula(faturaDurumu, fiyat,50);
+                double toplam = vergiUygula(tutarMobile, firmaName);
+                Console.WriteLine("Son fiyat Mobile Phone: " + toplam);
+                break;
+        }
+        
+    }
+}
+
+
+
+
+
+internal class Asker
+{
+private string Adsoyad;
+private int yas;
+private int boy;
+private int kilo;
+private int maas;
+//kapsülleme property  get, set
+
+ public string Ad
+ {
+     get { return Adsoyad; }
+     set { Adsoyad = value; }
+ }
+ //yas 19 büyükse atama yapsın yoksa yapmasın
+
+ public int Yas
+ {
+     get { return yas; }
+     set
+     {
+
+         if (value > 19)
+         {
+             yas = value;
+         }
+         else
+         {
+             Console.WriteLine("yaşınız tutmuyor.");
+         }
+
+     }
+ }
+
+ public int Boy
+ {
+     get { return boy; }
+     set
+     {
+
+         if (value > 160 && value < 190)
+         {
+             boy = value;
+         }
+
+         else
+         {
+             Console.WriteLine("boy sıkıntı");
+         }
+
+     }
+ }
+     public int Kilo
+ {
+     get
+     {
+         return kilo;
+     }
+     set
+     {
+         if(value>50 && value < 100)
+         {
+             kilo = value;
+         }
+         else
+         {
+             Console.WriteLine("kilo uymuyor.");
+         }
+     }
+ }
+
+
+ public int Maas
+ {
+     get { return maas; }
+     set { maas = value; ; }
+
+ }
+
+
+
+
+
+
+
+
+
+ internal class Asker
+{
+private string Adsoyad;
+private int yas;
+private int boy;
+private int kilo;
+private int maas;
+//kapsülleme property  get, set
+
+ public string Ad
+ {
+     get { return Adsoyad; }
+     set { Adsoyad = value; }
+ }
+ //yas 19 büyükse atama yapsın yoksa yapmasın
+
+ public int Yas
+ {
+     get { return yas; }
+     set
+     {
+
+         if (value > 19)
+         {
+             yas = value;
+         }
+         else
+         {
+             Console.WriteLine("yaşınız tutmuyor.");
+         }
+
+     }
+ }
+
+ public int Boy
+ {
+     get { return boy; }
+     set
+     {
+
+         if (value > 160 && value < 190)
+         {
+             boy = value;
+         }
+
+         else
+         {
+             Console.WriteLine("boy sıkıntı");
+         }
+
+     }
+ }
+     public int Kilo
+ {
+     get
+     {
+         return kilo;
+     }
+     set
+     {
+         if(value>50 && value < 100)
+         {
+             kilo = value;
+         }
+         else
+         {
+             Console.WriteLine("kilo uymuyor.");
+         }
+     }
+ }
+
+
+ public int Maas
+ {
+     get { return maas; }
+     set { maas = value;}
+
+ }
+
+
+ public void AskerhESAP()
+ {
+     if (maas > 6000)
+     {
+         Console.WriteLine("tEBRİKLER  2 GÜNLÜK TELEFON İZNİ");
+     }
+ }
+
+
+Asker asker = new Asker();
+Console.WriteLine("Adsoyad giriniz");
+asker.Ad=Console.ReadLine();
+Console.WriteLine("Yaş giriniz");
+asker.Yas = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Boy giriniz");
+asker.Boy = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Kilo giriniz");
+asker.Kilo=Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Maaş giriniz");
+asker.Maas=Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("adsoyad : " + asker.Ad);
+Console.WriteLine("yaş : " + asker.Yas);
+Console.WriteLine("boy "+asker.Boy);
+Console.WriteLine("kilo : "+asker.Kilo);
+Console.WriteLine("maaş : "+asker.Maas);
+
+Console.ReadLine();
+
+
+
+
+
+
+internal class Kredi   //super class ana class
+{
+private int KrediNo;
+private string KrediAdi;
+private int Tutar;
+
+ public int No
+ {
+     get { return KrediNo; }
+     set { KrediNo = value; }
+
+ }
+
+ public string kAdi
+ {
+     get { return KrediAdi; }
+     set { KrediAdi = value; }
+ }
+ public int kTUTAR
+ {
+     get { return Tutar; }
+     set { Tutar = value; }
+ }
+
+
+
+ public int KrediKomisyon(int tutar)
+ {
+     tutar += tutar * 2 / 100;
+     return tutar;
+ }
+}
+
+
+
+internal class KobiKredi:Kredi
+{
+public string buyukluk;
+private int calisanSayisi;
+public string maasMusterisi;
+
+ public int CS
+ {
+     get { return calisanSayisi; }
+     set
+     {
+         if (value < 5)
+         {
+             Console.WriteLine("kobi kredisi verilmez");
+         }
+         else
+         {
+             calisanSayisi = value;
+         }
+
+     }
+ }
+
+
+
+ internal class BireyselKredi:Kredi
+{
+public string musteriDurum;
+public string sigorta;
+public int Findesk;
+
+ public void Findeks(int tutar)
+ {
+     if (Findesk > 50)
+     {
+         tutar -= 1000;
+         Console.WriteLine("Findeks puana göre eline geçicek kredi tutarı : "+tutar);
+     }
+     else
+     {
+         tutar -= 5000;
+         Console.WriteLine("Findeks puana göre eline geçicek kredi tutarı : " + tutar);
+     }
+ }
+
+
+ }
+17:32
+
+
+static void Main(string[] args)
+{
+
+Console.WriteLine("1-Bireysel Kredi");
+Console.WriteLine("2-Kobi Kredi");
+int secim = Convert.ToInt32(Console.ReadLine());
+
+if (secim == 1)
+{
+
+    BireyselKredi bireyselKredi = new BireyselKredi();
+    bireyselKredi.No = 45;
+    bireyselKredi.kAdi = "esnek hesap kreedisi";
+    bireyselKredi.kTUTAR = 100000;
+    int Komisyon = bireyselKredi.KrediKomisyon(bireyselKredi.kTUTAR);
+    bireyselKredi.musteriDurum = "evet";
+    Console.WriteLine("son kredi tutaruı : "+Komisyon);
+    bireyselKredi.Findesk = 60;
+    bireyselKredi.Findeks(Komisyon);
+
+
+
+
+}
+else
+{
+    Console.WriteLine("Kobi kredi ekranı");
+    KobiKredi kobiKredi = new KobiKredi();
+    kobiKredi.No = 45;
+    kobiKredi.kAdi = "esnek hesap kreedisi";
+    kobiKredi.kTUTAR = 100000;
+    int Komisyon = kobiKredi.KrediKomisyon(kobiKredi.kTUTAR);
+
+    kobiKredi.buyukluk = "orta";
+    kobiKredi.maasMusterisi = "evet";
+    kobiKredi.CS = 6;
+
+    Console.WriteLine("Komisyon "+Komisyon);
+
+
+}
+
+
+Console.ReadLine();
+
+

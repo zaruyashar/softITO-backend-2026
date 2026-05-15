@@ -11,6 +11,7 @@ namespace Functions
     {
         /* Methods */
         // Karesini Alma
+        /*
         public static int SquareCalc(int n)
         {
             int sqrCalc = n * n;
@@ -254,12 +255,12 @@ namespace Functions
             Console.WriteLine("2 - Etek (600 TL)");
             Console.WriteLine("3 - Kravat (350 TL)");
         }
-
+        */
 
         // ALG 6 Fonksiyonları
         public static double BigScreenNewPrice(double price)
         {
-            double initialTotal = price *= 1.1d;
+            double initialTotal = price * 1.1d;
 
             Console.WriteLine($"TV için ekran boyutuna göre zamlı tutar şimdilik {initialTotal} olarak hesaplandı.");
 
@@ -284,7 +285,7 @@ namespace Functions
             return finalTaxedAmount;
         }
 
-        public static double CheckMembershipAndDisplayFinalPrice(double finalTaxedAmount)
+        public static double CheckMembershipAndDisplayFinalPrice(double finalTaxedAmount, bool isEligibleForRaffle = false)
         {
             double finalMostPrice = 0;
 
@@ -307,17 +308,41 @@ namespace Functions
                 {
                     finalMostPrice = finalTaxedAmount * 0.8d;
                     Console.WriteLine($"Yeni üyelere özel indirimli tutar: {finalMostPrice}");
-                    Console.WriteLine("Fişiniz yazdırılıyor...");
+                    Console.WriteLine("Fişiniz hazırlanıyor...");
                 }
                 else
                 {
                     finalMostPrice = finalTaxedAmount;
                     Console.WriteLine($"Ödenecek toplam tutar: {finalMostPrice}");
+                    Console.WriteLine("Fişiniz hazırlanıyor...");
+                }
+            }
+
+            if (isEligibleForRaffle)
+            {
+                Console.WriteLine("Çekilişe katılıp ek 500 TL indirim kazanmak ister misiniz? (E/H): ");
+                char rafflePref = Convert.ToChar(Console.ReadLine());
+
+                if (rafflePref == 'E')
+                {
+                    finalMostPrice -= 500;
+                    Console.WriteLine($"Çekiliş indirimi ile yeni tutar: {finalMostPrice}");
                     Console.WriteLine("Fişiniz yazdırılıyor...");
                 }
             }
 
             return finalMostPrice;
+        }
+
+        public static int ComputerSelectionMenu()
+        {
+            Console.WriteLine("Ürün seçiminizi yapın:");
+            Console.WriteLine("1 - Notebook");
+            Console.WriteLine("2 - Tablet");
+            Console.WriteLine("3 - MacBook");
+            int userSelectedDeviceType = Convert.ToInt32(Console.ReadLine());
+
+            return userSelectedDeviceType;
         }
 
 
@@ -487,6 +512,54 @@ namespace Functions
                 
                 // Bilgisayar
                 case 2:
+                    int userSelectedDeviceType = ComputerSelectionMenu();
+
+                    switch (userSelectedDeviceType)
+                    {
+                        // Notebook
+                        case 1:
+                            double notebookPrice = 75000;
+                            double firstTaxNb = notebookPrice * 1.2d;
+
+                            double finalTaxNb = CalculateAdditionalTax(firstTaxNb);
+                            CheckMembershipAndDisplayFinalPrice(finalTaxNb);
+
+                            break;
+
+                        // Tablet
+                        case 2:
+                            double tabletPrice = 60000;
+                            double firstTaxTb = tabletPrice * 1.1d;
+
+                            double finalTaxTb = CalculateAdditionalTax(firstTaxTb);
+                            CheckMembershipAndDisplayFinalPrice(finalTaxTb);
+
+                            break;
+
+                        // MacBook
+                        case 3:
+                            Console.WriteLine("İşletim sistemi de paketinize eklensin mi (E/H): ");
+                            char c = Convert.ToChar(Console.ReadLine());
+
+                            double macPrice = 90000;
+                            double osPrice = 10000;
+                            double firstTaxMac = 1;
+
+                            if (c == 'E')
+                            {
+                                macPrice += osPrice;
+                                firstTaxMac = macPrice * 1.15d;
+                            }
+                            else
+                            {
+                                firstTaxMac = macPrice * 1.1d;
+                            }
+
+                            CalculateAdditionalTax(firstTaxMac);
+                            CheckMembershipAndDisplayFinalPrice(firstTaxMac, true);
+
+                            break;
+                    }
 
                     break;
 
