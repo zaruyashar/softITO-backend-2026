@@ -1,0 +1,30 @@
+﻿//abstract (soyutlama)
+//Bir sınıf abstract olarak tanımlandıgında  o sınıftan nesne(instance) oluşturamayız .new doğrudann bir nesne üretemeyiz
+
+//ancak bu classdan alt classlara kalıtım bırakırsak  bu sınıftaki üyeler kullanılırç
+
+//amaç:ortak özelliklere sahip sınıflarana taban oluşturur.
+//kalıtım alarak,sadece miras alınarak işlem yapılır
+
+//abstact sınıfların içerisinde abstract metot veya property kullanılarak işlemler yapılır.
+//abstract metotlar alt classlarda override   edilerek kullanılır.
+
+
+
+//constructor (yapıcı metot)
+//bir sınıf yeni bir nesne (instance ) oluşturdugunda otomatik olarak calısan bir metotdur.
+//sınıf isim olmak zorundadır .değer döndürmez void olarak kullanılmaz
+//nesneye başlangıc degeri atamak için kullandıgımız metotdur
+//constructor temel özellikleri
+//1)sınıf ismi ile aynı olmalı
+//2)dönüş değeri yok (int,return,void) ihtiyaç duyöaz
+//otomatik çağrılır new ile nesne olustruldugu anda
+//varsayılan (default) constructor :
+
+//nesne güvenli ve eksiksiz  doğru bir şekilde yazılıma dahil edilmesini sağlamaktır
+
+//Constructor yazılım mimarisinde temel kullanım amacu
+//başlangıc degeri atamama
+//zorunlu deger atama
+//dependency Injection (bağımlılıkların enjekte edilmesi)
+//ilk kurulum
