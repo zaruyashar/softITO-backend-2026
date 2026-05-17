@@ -9,14 +9,14 @@ namespace OOP2
     internal abstract class Emlak
     {
         private string YapiDurumu; // "İmarlı" ise ata; imarsıza atama yapma
-        private string YapiAdi;
+        private string BelgeAdi;
         private int BelgeNo; // 6 digits
         private string EmlakCinsi; // Sadece "arsa" veya "konut" kabul et
         private string BolgeSorumlusu;
         private string AlimSatimSorumlusu;
         private string AlimDurumu; // Kiralık veya satılık
-        private float Komisyon;
-        private float M2Fiyat;
+        private double Komisyon;
+        private double M2Fiyat;
         private double M2;
 
 
@@ -37,7 +37,7 @@ namespace OOP2
             }
         }
 
-        public string yapiAdi { get { return YapiAdi; } set { YapiAdi = value; } }
+        public string belgeAdi { get { return BelgeAdi; } set { BelgeAdi = value; } }
 
         public int belgeNo
         {
@@ -91,11 +91,14 @@ namespace OOP2
             }
         }
 
-        public float komisyon { get { return Komisyon; } set { Komisyon = value; } }
+        public double komisyon { get { return Komisyon; } set { Komisyon = value; } }
 
-        public float m2Fiyat { get { return M2Fiyat; } set { M2Fiyat = value; } }
+        public double m2Fiyat { get { return M2Fiyat; } set { M2Fiyat = value; } }
 
         public double m2 { get { return M2; } set { M2 = value; } }
+
+
+        // Methods
 
 
     }

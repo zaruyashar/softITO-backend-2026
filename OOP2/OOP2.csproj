@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgirVasita.cs" />
+    <Compile Include="Arsa.cs" />
     <Compile Include="Departman.cs" />
     <Compile Include="ElHalisi.cs" />
+    <Compile Include="Emlak.cs" />
     <Compile Include="EvMobilyasi.cs" />
     <Compile Include="Hali.cs" />
     <Compile Include="IK.cs" />
@@ -56,6 +59,7 @@
     <Compile Include="Pazarlama.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tasit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

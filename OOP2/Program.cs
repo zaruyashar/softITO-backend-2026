@@ -3,16 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace OOP2
 {
     internal class Program
     {
-        // ALG 2 Fonksiyonları
+        // ALG 2 - Functions
+        // Using reflection for the first time!
+        static void PopulateDataDynamically<T>(T newObjToPopulate)
+        {
+            Type classType = typeof(T);
+            PropertyInfo[] attributes = classType.GetProperties();
+
+            foreach (PropertyInfo attribute in attributes)
+            {
+                // Not the best display UX-wise :D
+                Console.WriteLine($"{attribute.Name} ({attribute.PropertyType.Name}) değerini girin: ");
+                string userInput = Console.ReadLine();
+
+                try
+                {
+                    object convertedVal = Convert.ChangeType(userInput, attribute.PropertyType);
+                    attribute.SetValue(newObjToPopulate, convertedVal);
+                }
+                catch
+                {
+                    Console.WriteLine("Hatalı veri tipi girişi yapıldı.");
+                }
+            }
 
 
 
 
+
+        }
+
+        /* ---------------------------- MAIN ----------------------------- */
         static void Main(string[] args)
         {
             // Teacher's example
@@ -78,6 +105,12 @@ namespace OOP2
 
 
             // ALG 2
+            Arsa yeniArsa = new Arsa();
+
+            Console.WriteLine("--- Emlak Kayıt Sistemi ---");
+
+            PopulateDataDynamically(yeniArsa); // Reflection kullandım
+
 
 
 
