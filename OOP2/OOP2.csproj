@@ -46,7 +46,6 @@
     <Compile Include="AgirVasita.cs" />
     <Compile Include="Arsa.cs" />
     <Compile Include="Departman.cs" />
-    <Compile Include="Dukkan.cs" />
     <Compile Include="ElHalisi.cs" />
     <Compile Include="Emlak.cs" />
     <Compile Include="EvMobilyasi.cs" />

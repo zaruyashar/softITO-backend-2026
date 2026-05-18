@@ -100,7 +100,6 @@ namespace OOP2
             Console.ReadLine();*/
 
 
-
             // ALG 2
             Console.WriteLine("=== ARSA ===");
             
@@ -156,11 +155,6 @@ namespace OOP2
             Console.WriteLine($"2. villanın toplam fiyatı: {villa2.ToplamFiyatHesapla()} TL");
 
             Console.ReadLine();
-
-
-
-
-
 
 
         }

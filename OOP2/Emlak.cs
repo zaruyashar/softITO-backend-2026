@@ -107,25 +107,14 @@ namespace OOP2
         {
             if (YapiDurumu == "İmarlı")
             {
-                Console.WriteLine("Belediye sistem kontrolü: Satışa uygundur.");
+                Console.WriteLine("Satışa uygundur.");
                 return true;
             }
             else
             {
-                Console.WriteLine("Belediye sistem kontrolü: Satışa uygun değildir.");
+                Console.WriteLine("Satışa uygun değildir.");
                 return false;
             }
         }
-
-
-        // Deneme - dükkan
-        public virtual double VergiHesapla()
-        {
-            double vergiTutar = m2 * 10;
-            return vergiTutar;
-        }
-
-        public abstract string KullanimAmaciniBelirt();
-
     }
 }
