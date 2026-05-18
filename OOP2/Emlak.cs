@@ -8,13 +8,13 @@ namespace OOP2
 {
     internal abstract class Emlak
     {
-        private string YapiDurumu; // "İmarlı" ise ata; imarsıza atama yapma
+        private string YapiDurumu;
         private string BelgeAdi;
-        private int BelgeNo; // 6 digits
-        private string EmlakCinsi; // Sadece "arsa" veya "konut" kabul et
+        private int BelgeNo;
+        private string EmlakCinsi;
         private string BolgeSorumlusu;
         private string AlimSatimSorumlusu;
-        private string AlimDurumu; // Kiralık veya satılık
+        private string AlimDurumu;
         private double Komisyon;
         private double M2Fiyat;
         private double M2;
@@ -80,7 +80,7 @@ namespace OOP2
             get { return AlimDurumu; }
             set
             {
-                if(value == "Kiralık" || value == "Satılık")
+                if (value == "Kiralık" || value == "Satılık")
                 {
                     AlimDurumu = value;
                 }
@@ -99,7 +99,33 @@ namespace OOP2
 
 
         // Methods
+        public abstract double FiyatHesapla();
 
+        public abstract double ToplamFiyatHesapla();
+
+        public virtual bool SatisaUygunMu()
+        {
+            if (YapiDurumu == "İmarlı")
+            {
+                Console.WriteLine("Belediye sistem kontrolü: Satışa uygundur.");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Belediye sistem kontrolü: Satışa uygun değildir.");
+                return false;
+            }
+        }
+
+
+        // Deneme - dükkan
+        public virtual double VergiHesapla()
+        {
+            double vergiTutar = m2 * 10;
+            return vergiTutar;
+        }
+
+        public abstract string KullanimAmaciniBelirt();
 
     }
 }

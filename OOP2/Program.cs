@@ -10,7 +10,7 @@ namespace OOP2
     internal class Program
     {
         // ALG 2 - Functions
-        // Using reflection for the first time!
+        /*
         static void PopulateDataDynamically<T>(T newObjToPopulate)
         {
             Type classType = typeof(T);
@@ -32,12 +32,9 @@ namespace OOP2
                     Console.WriteLine("Hatalı veri tipi girişi yapıldı.");
                 }
             }
-
-
-
-
-
         }
+        */
+
 
         /* ---------------------------- MAIN ----------------------------- */
         static void Main(string[] args)
@@ -105,11 +102,60 @@ namespace OOP2
 
 
             // ALG 2
-            Arsa yeniArsa = new Arsa();
+            Console.WriteLine("=== ARSA ===");
+            
+            Arsa arsa1 = new Arsa();
+            
+            arsa1.yapiDurumu = "İmarlı";
+            arsa1.emlakCinsi = "Arsa";
+            arsa1.belgeNo = 123456;
+            arsa1.m2 = 6000;
+            arsa1.m2Fiyat = 2000;
+            arsa1.tapuAdi = "Ayşe Yılmaz";
+            arsa1.tapuNo = 987;
+            arsa1.tapuDurumu = "Müstakil";
+            arsa1.arsaDurumu = "Şahsi";
 
-            Console.WriteLine("--- Emlak Kayıt Sistemi ---");
+            arsa1.SatisaUygunMu();
+            Console.WriteLine($"Arsa fiyatı: {arsa1.FiyatHesapla()} TL");
+            Console.WriteLine($"Arsanın toplam fiyatı: {arsa1.ToplamFiyatHesapla()} TL");
+            arsa1.YapiIzniOrani();
 
-            PopulateDataDynamically(yeniArsa); // Reflection kullandım
+
+
+            Console.WriteLine("\n=== KONUT ===");
+
+            Konut konut1 = new Konut();
+
+            konut1.yapiDurumu = "İmarlı";
+            konut1.emlakCinsi = "Konut";
+            konut1.belgeNo = 654321;
+            konut1.brutM2 = 120;
+            konut1.m2Fiyat = 25000;
+            konut1.balkonluMu = true;
+            konut1.cephe = "Güney";
+            konut1.enerjiKimlik = "A++";
+            konut1.depremPuan = 100;
+
+            Console.WriteLine($"Konut fiyatı: {konut1.FiyatHesapla()} TL");
+            Console.WriteLine($"Konutun toplam fiyatı: {konut1.ToplamFiyatHesapla()} TL");
+            konut1.KrediVer();
+
+
+
+            Console.WriteLine("\n=== VİLLA ===");
+
+            Villa villa1 = new Villa();
+
+            Console.WriteLine($"1. standart villa tipi: {villa1.villaTipi}");
+
+            Villa villa2 = new Villa("İmarlı", 111222, "Konut", 250, 40000, "Dubleks");
+
+            Console.WriteLine($"2. özel villa tipi: {villa2.villaTipi}");
+            Console.WriteLine($"2. villa fiyatı: {villa2.FiyatHesapla()} TL");
+            Console.WriteLine($"2. villanın toplam fiyatı: {villa2.ToplamFiyatHesapla()} TL");
+
+            Console.ReadLine();
 
 
 

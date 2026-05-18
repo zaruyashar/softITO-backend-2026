@@ -1,0 +1,20 @@
+﻿// c# ile veritabanı baglantısı sağlayan 2 yöntem var
+        //1)Ado.Net Teknolojisi, 2) Entity Framwork
+
+        // ADO.NET
+        //. Microsoftun .net platformu için geliştirdiği  teknolojidir.veritabanına bağlanmak,verileri almak,işlemek ve güncellemeizi sağlayan işlemler bütünüdr.uygulamalar ile veri tabanı arasında köprü görevi oluşturur.
+
+        //ado.net temel özell,kşer,
+        //veri erişimi ,xml destegi
+
+        //Temel ADO.NET BİLEŞENLERİ
+        //connection :veritabnı ile basğlantı kurar sqlConnection
+        //Command (SqlCommand):sql sorguları  yazmamızı sağlar aynı zamanda store procedürle ile çalışır.
+        //DataReader :verileri hızlı ve salt okunu
+        //DataAdapter:Dataset ile veri kaynagı arasında  bir köprü oluşturur.verileri doldurulur görüntülenmesini sğlar
+        //Dataset:verilerimizin tutuldugu koleksiyondur
+
+        //avantajları
+        //yüksek preformans  :özelliklede büyük veri setleriyle çalışırken
+        //esneklik :farkli veritabanı sağlayıcınlarında uyumludur.
+        //
