@@ -1,0 +1,32 @@
+﻿private void button3_Click(object sender, EventArgs e)//yenile
+{
+con.Open();
+SqlCommand cmd = new SqlCommand();
+cmd.Connection = con;
+cmd.CommandType = CommandType.StoredProcedure;
+cmd.CommandText = "MusteriYenile";
+cmd.Parameters.AddWithValue("MusteriNo", textBox1.Tag);
+cmd.Parameters.AddWithValue("AdSoyad", textBox1.Text);
+cmd.Parameters.AddWithValue("Yas", textBox2.Text);
+cmd.Parameters.AddWithValue("Maas", textBox3.Text);
+cmd.Parameters.AddWithValue("Ciro", textBox4.Text);
+cmd.Parameters.AddWithValue("Bakiye", textBox5.Text);
+
+  cmd.ExecuteNonQuery();
+  con.Close();
+  Listele();
+}
+
+private void button4_Click(object sender, EventArgs e)//sil
+{
+con.Open();
+SqlCommand cmd = new SqlCommand();
+cmd.Connection = con;
+cmd.CommandType = CommandType.StoredProcedure;
+cmd.CommandText = "MSil";
+cmd.Parameters.AddWithValue("MusteriNo", textBox1.Tag);
+cmd.ExecuteNonQuery();
+con.Close();
+Listele();
+
+}
