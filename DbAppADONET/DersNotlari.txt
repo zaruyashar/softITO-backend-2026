@@ -18,3 +18,93 @@
         //yüksek preformans  :özelliklede büyük veri setleriyle çalışırken
         //esneklik :farkli veritabanı sağlayıcınlarında uyumludur.
         //
+
+
+
+//baglantı yapıcak veritabnına
+SqlConnection con=new SqlConnection("Data Source=DESKTOP-EBHAI41\SA;Database=SoftMagaza;Integrated Security=true");
+
+public void Listele(string listele)//select methodu
+{
+SqlDataAdapter dr= new SqlDataAdapter(listele,con);
+DataSet ds = new DataSet();
+dr.Fill(ds);
+dataGridView1.DataSource = ds.Tables[0];
+
+}
+
+private void Form1_Load(object sender, EventArgs e)
+{
+
+}
+
+private void button1_Click(object sender, EventArgs e)//listeleme
+{
+Listele("Select * from Malzemeler");
+}
+
+private void button2_Click(object sender, EventArgs e)//ekleme
+{
+con.Open();
+SqlCommand komut = new SqlCommand("insert into malzemeler(MalzemeAdi,Fiyat,Adet,Durum)values(@MalzemeAdi,@Fiyat,@Adet,@Durum)",con);
+
+  komut.Parameters.AddWithValue("@MalzemeAdi",textBox2.Text);
+  komut.Parameters.AddWithValue("@Fiyat", textBox3.Text);
+  komut.Parameters.AddWithValue("@Adet", textBox4.Text);
+  komut.Parameters.AddWithValue("@Durum", textBox5.Text);
+  komut.ExecuteNonQuery();
+  con.Close();
+  Listele("Select * from Malzemeler");
+}
+
+private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)//seçme textboxa getirme
+{
+
+  int satir = dataGridView1.SelectedCells[0].RowIndex;
+  textBox1.Text = dataGridView1.Rows[satir].Cells[0].Value.ToString();
+  textBox2.Text = dataGridView1.Rows[satir].Cells[1].Value.ToString();
+  textBox3.Text = dataGridView1.Rows[satir].Cells[2].Value.ToString();
+  textBox4.Text = dataGridView1.Rows[satir].Cells[3].Value.ToString();
+  textBox5.Text = dataGridView1.Rows[satir].Cells[4].Value.ToString();
+}
+
+private void button3_Click(object sender, EventArgs e)//güncelleme
+{
+con.Open();
+SqlCommand komut = new SqlCommand("Update Malzemeler set MalzemeAdi='"+textBox2.Text.ToString()+"',Fiyat='"+textBox3.Text.ToString()+"',Adet='"+textBox4.Text.ToString()+"',Durum='"+textBox5.Text.ToString()+"' where MalzemeNo='"+textBox1.Text.ToString()+"'",con);
+komut.ExecuteNonQuery();
+Listele("select * from Malzemeler");
+
+  con.Close();
+}
+
+private void button4_Click(object sender, EventArgs e)//Silme işlemi
+{
+
+  con.Open();
+
+  SqlCommand komut = new SqlCommand("Delete from Malzemeler where MalzemeNo=@MalzemeNo",con);
+  komut.Parameters.AddWithValue("@MalzemeNo",textBox1.Text);
+  komut.ExecuteNonQuery();
+  Listele("select * from Malzemeler");
+
+
+  con.Close();
+}
+
+private void button5_Click(object sender, EventArgs e)//arama butonu
+{
+con.Open();
+SqlCommand komut = new SqlCommand("select * from Malzemeler where MalzemeAdi like '%"+textBox2.Text+"%' ",con);
+
+  SqlDataAdapter dr = new SqlDataAdapter(komut);
+  DataSet ds = new DataSet();
+  dr.Fill(ds);
+  dataGridView1.DataSource = ds.Tables[0];
+
+
+
+
+
+  con.Close();
+}
