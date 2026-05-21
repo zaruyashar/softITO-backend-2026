@@ -1,0 +1,48 @@
+﻿//entity framework
+//microsoft tarafından geli,ştirilen .net uygulamalarında veritabanı işlemlerini sql yerine c# nesneleriyle yapmamızı sağlayan bir orm aracıdır
+//ORM(OBJECT RELATİON MAPPİGİN)karmaşık sql sorgualarımızı daha düzenli ve daha kolay bir şekilde  kod okunabilirliğini artırarak yazmamızı sağlar.
+//temek özellikleri ve avantajları
+//nesne odakli yaklaışm :veri tabanındaki tabloları kayıtları c# sınıf ve nesne olarak yönetmemizi sağlar.
+//LINQ DESTEGİ :VERİLERİ SORGULAMAK İÇİN .NET İÇERİSİNDE YER ALAN LINQ(LANGUAGE INTEGRATED QUERY) SROGULARIMIZI YAZICAZ
+//VERİTABANI BAGIMSIZLIGI
+//ÇALIŞMA YAKLAŞIMI VE VERİTABANI MİMARİSİ
+//codefirst:
+//databasefirst
+//modelfirst
+//LINQ :Microsoft trafından geliştirilen ve c# .net gibi dillerde veri sorgulama ve filtreleme ,sıralama,gruplama işlemlerimiz yapan bir  sorgulama  çeşitidir.veri koleksiyonlaronda  döngülere ihtiyaç duymadan filtreme,isıralama gibi işlemleri yapar.
+//3 eayrılır
+//lınq to object :dizi be listeler arasında çalışır
+//linq entities /sql ef gibi araçlar vasıtasıyla veritabanlarıyla çalışır
+//linq xml :xml belgelerinde  çalışır
+//avantajlarıdır
+//okunabilirligi :
+//esnekliklik
+//derleme zamanlama kontrolü(type safety)
+//1)filtreleme methodu
+//where
+//2)sıralama metotları
+//order by:
+//orderby descending
+//then by/then by descengin :ilk sıralamadan sonra ,eşit olan elemanlar için sıralama kriteri ekler
+//3)dönüştürme ve seçme metotları
+//selelect
+//selectmany :
+//4)eleman seçme metotları
+//first/firstorDefault :şartı sağlayan ilk elemanı getirir.eğer sart sağlanmazsa hata veriri ,firstordefault hata vermez null deger döndürür.
+//single/singleOrDefault:verilerde sartı sağlayan yanlızca bir eleman olmalıdır .birden fazla hata verir
+//last/lastOrDefault:şartı sağlayan son elemanı getirir.
+//5)kümeleme ve hesaplama metotları
+//count,sum,avg,max,min,
+//6)kontrol ve doğrulama metotoları
+//veri doğrulama true /false
+//any :koşulu sağlayan enaz bir eleman var mı diye bakar
+//All:tüm elemanlrın koşula uyup uymadıgını kontorl eder.
+//Contains:verilerin içinde eleman arama için
+//7)gruplandırma ve birleştirme
+//groupby
+//join
+//lambda (ananonim fonksişyonlar)
+//yazılımda lambda bir isme ihtiyaç duymadan tek satırda ananonim isimsiz fonk yaamamızı sağlar.Kodun daha kısa okunabilir ve esnek olmasını sağlar.
+//c# lınq ile bilirkkte çok kullanılır
+//x=>x.yas>18
+

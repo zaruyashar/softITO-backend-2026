@@ -4,6 +4,7 @@
   <Project Path="Banka/Banka.csproj" Id="1b7d8a2b-f11f-4670-9321-c578e05007b1" />
   <Project Path="ComboBox/ComboBox.csproj" Id="2f0ccbb9-e655-4e6f-9e1b-6d03b041ca73" />
   <Project Path="DbAppADONET/DbAppADONET.csproj" Id="6cc80935-1f7a-4e5b-8934-6ea3ccd164f8" />
+  <Project Path="EntityFrameworkDBFirst/EntityFrameworkDBFirst.csproj" Id="fd178d6a-bf1a-4e6e-b024-301cfe9a84ac" />
   <Project Path="Forms_Intro/Forms_Intro.csproj" Id="ae276681-2174-4d04-a960-b64aa796faa2" />
   <Project Path="Functions/Functions.csproj" Id="b70454b3-2a67-4887-b491-90cd00e80acd" />
   <Project Path="Loops/Loops.csproj" Id="036b47b2-0876-43a2-b1aa-70c697574aea" />

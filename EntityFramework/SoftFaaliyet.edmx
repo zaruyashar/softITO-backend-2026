@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SoftFaaliyetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Birim">
+          <Key>
+            <PropertyRef Name="BirimNo" />
+          </Key>
+          <Property Name="BirimNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BirimAdi" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Calisan">
+          <Key>
+            <PropertyRef Name="CalisanNo" />
+          </Key>
+          <Property Name="CalisanNo" Type="int" Nullable="false" />
+          <Property Name="Adsoyad" Type="varchar" MaxLength="50" />
+          <Property Name="Yas" Type="int" />
+          <Property Name="Maas" Type="int" />
+          <Property Name="Mezuniyet" Type="varchar" MaxLength="50" />
+          <Property Name="Cinsiyet" Type="varchar" MaxLength="50" />
+          <Property Name="Memleket" Type="varchar" MaxLength="50" />
+          <Property Name="Şube" Type="varchar" MaxLength="50" />
+          <Property Name="Prim" Type="int" />
+        </EntityType>
+        <EntityType Name="Kiyafet">
+          <Key>
+            <PropertyRef Name="KiyafetNo" />
+          </Key>
+          <Property Name="KiyafetNo" Type="int" Nullable="false" />
+          <Property Name="KiyafetAdi" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Beden" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="KumasTipi" Type="varchar" MaxLength="25" />
+          <Property Name="Renk" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Marka" Type="varchar" MaxLength="25" />
+          <Property Name="KiyafetModel" Type="varchar" MaxLength="25" />
+          <Property Name="Yas" Type="varchar" MaxLength="25" />
+          <Property Name="Adet" Type="int" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Mensei" Type="varchar" MaxLength="25" />
+          <Property Name="SubeSehir" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Malzemeler">
+          <Key>
+            <PropertyRef Name="MalzemeNo" />
+          </Key>
+          <Property Name="MalzemeNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MalzemeAdi" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fiyat" Type="money" Nullable="false" />
+          <Property Name="Adet" Type="int" />
+          <Property Name="Durum" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="Yas" Type="int" />
+          <Property Name="Maas" Type="money" />
+          <Property Name="Ciro" Type="money" />
+          <Property Name="Bakiye" Type="money" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="PersonelNo" />
+          </Key>
+          <Property Name="PersonelNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonelAdSoyadi" Type="varchar" MaxLength="50" />
+          <Property Name="CalistigiBirimNo" Type="int" />
+          <Property Name="UnvanKodu" Type="int" />
+          <Property Name="DahilOlduguProjelerNo" Type="int" />
+          <Property Name="YetkiDuzeyi" Type="int" />
+        </EntityType>
+        <EntityType Name="Proje">
+          <Key>
+            <PropertyRef Name="ProjeKodu" />
+          </Key>
+          <Property Name="ProjeKodu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjeAdi" Type="varchar" MaxLength="50" />
+          <Property Name="SorumluPersonelNo" Type="int" />
+          <Property Name="AitOlduguBirimNo" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Unvan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnvanKarsiligi" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="YetkiDuzeyi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YetkiDurumKodu" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Personel_Unvan">
+          <End Role="Unvan" Type="Self.Unvan" Multiplicity="0..1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unvan">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="UnvanKodu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_YetkiDuzeyi">
+          <End Role="YetkiDuzeyi" Type="Self.YetkiDuzeyi" Multiplicity="0..1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YetkiDuzeyi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="YetkiDuzeyi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proje_Birim">
+          <End Role="Birim" Type="Self.Birim" Multiplicity="0..1" />
+          <End Role="Proje" Type="Self.Proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Birim">
+              <PropertyRef Name="BirimNo" />
+            </Principal>
+            <Dependent Role="Proje">
+              <PropertyRef Name="AitOlduguBirimNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proje_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+          <End Role="Proje" Type="Self.Proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelNo" />
+            </Principal>
+            <Dependent Role="Proje">
+              <PropertyRef Name="SorumluPersonelNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="Mlistele" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="MSil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MusteriID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="MusteriEkle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AdSoyad" Type="varchar" Mode="In" />
+          <Parameter Name="Yas" Type="int" Mode="In" />
+          <Parameter Name="Maas" Type="money" Mode="In" />
+          <Parameter Name="Ciro" Type="money" Mode="In" />
+          <Parameter Name="Bakiye" Type="money" Mode="In" />
+        </Function>
+        <Function Name="MusteriYenile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MusteriID" Type="int" Mode="In" />
+          <Parameter Name="AdSoyad" Type="varchar" Mode="In" />
+          <Parameter Name="Yas" Type="int" Mode="In" />
+          <Parameter Name="Maas" Type="money" Mode="In" />
+          <Parameter Name="Ciro" Type="money" Mode="In" />
+          <Parameter Name="Bakiye" Type="money" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="SoftFaaliyetModelStoreContainer">
+          <EntitySet Name="Birim" EntityType="Self.Birim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Calisan" EntityType="Self.Calisan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kiyafet" EntityType="Self.Kiyafet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Malzemeler" EntityType="Self.Malzemeler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Musteriler" EntityType="Self.Musteriler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proje" EntityType="Self.Proje" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unvan" EntityType="Self.Unvan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YetkiDuzeyi" EntityType="Self.YetkiDuzeyi" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Personel_Unvan" Association="Self.FK_Personel_Unvan">
+            <End Role="Unvan" EntitySet="Unvan" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_YetkiDuzeyi" Association="Self.FK_Personel_YetkiDuzeyi">
+            <End Role="YetkiDuzeyi" EntitySet="YetkiDuzeyi" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proje_Birim" Association="Self.FK_Proje_Birim">
+            <End Role="Birim" EntitySet="Birim" />
+            <End Role="Proje" EntitySet="Proje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proje_Personel" Association="Self.FK_Proje_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Proje" EntitySet="Proje" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SoftFaaliyetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Birim">
+          <Key>
+            <PropertyRef Name="BirimNo" />
+          </Key>
+          <Property Name="BirimNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BirimAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Projes" Relationship="Self.FK_Proje_Birim" FromRole="Birim" ToRole="Proje" />
+        </EntityType>
+        <EntityType Name="Calisan">
+          <Key>
+            <PropertyRef Name="CalisanNo" />
+          </Key>
+          <Property Name="CalisanNo" Type="Int32" Nullable="false" />
+          <Property Name="Adsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Yas" Type="Int32" />
+          <Property Name="Maas" Type="Int32" />
+          <Property Name="Mezuniyet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cinsiyet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Memleket" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Şube" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prim" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Kiyafet">
+          <Key>
+            <PropertyRef Name="KiyafetNo" />
+          </Key>
+          <Property Name="KiyafetNo" Type="Int32" Nullable="false" />
+          <Property Name="KiyafetAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Beden" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KumasTipi" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Renk" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Marka" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="KiyafetModel" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Yas" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Adet" Type="Int32" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Mensei" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SubeSehir" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Malzemeler">
+          <Key>
+            <PropertyRef Name="MalzemeNo" />
+          </Key>
+          <Property Name="MalzemeNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MalzemeAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Adet" Type="Int32" />
+          <Property Name="Durum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Yas" Type="Int32" />
+          <Property Name="Maas" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Ciro" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Bakiye" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="PersonelNo" />
+          </Key>
+          <Property Name="PersonelNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonelAdSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CalistigiBirimNo" Type="Int32" />
+          <Property Name="UnvanKodu" Type="Int32" />
+          <Property Name="DahilOlduguProjelerNo" Type="Int32" />
+          <Property Name="YetkiDuzeyi" Type="Int32" />
+          <NavigationProperty Name="Unvan" Relationship="Self.FK_Personel_Unvan" FromRole="Personel" ToRole="Unvan" />
+          <NavigationProperty Name="YetkiDuzeyi1" Relationship="Self.FK_Personel_YetkiDuzeyi" FromRole="Personel" ToRole="YetkiDuzeyi" />
+          <NavigationProperty Name="Projes" Relationship="Self.FK_Proje_Personel" FromRole="Personel" ToRole="Proje" />
+        </EntityType>
+        <EntityType Name="Proje">
+          <Key>
+            <PropertyRef Name="ProjeKodu" />
+          </Key>
+          <Property Name="ProjeKodu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjeAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SorumluPersonelNo" Type="Int32" />
+          <Property Name="AitOlduguBirimNo" Type="Int32" />
+          <NavigationProperty Name="Birim" Relationship="Self.FK_Proje_Birim" FromRole="Proje" ToRole="Birim" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Proje_Personel" FromRole="Proje" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Unvan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnvanKarsiligi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Personels" Relationship="Self.FK_Personel_Unvan" FromRole="Unvan" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="YetkiDuzeyi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YetkiDurumKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Personels" Relationship="Self.FK_Personel_YetkiDuzeyi" FromRole="YetkiDuzeyi" ToRole="Personel" />
+        </EntityType>
+        <Association Name="FK_Proje_Birim">
+          <End Role="Birim" Type="Self.Birim" Multiplicity="0..1" />
+          <End Role="Proje" Type="Self.Proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Birim">
+              <PropertyRef Name="BirimNo" />
+            </Principal>
+            <Dependent Role="Proje">
+              <PropertyRef Name="AitOlduguBirimNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Unvan">
+          <End Role="Unvan" Type="Self.Unvan" Multiplicity="0..1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unvan">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="UnvanKodu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_YetkiDuzeyi">
+          <End Role="YetkiDuzeyi" Type="Self.YetkiDuzeyi" Multiplicity="0..1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YetkiDuzeyi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="YetkiDuzeyi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proje_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+          <End Role="Proje" Type="Self.Proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelNo" />
+            </Principal>
+            <Dependent Role="Proje">
+              <PropertyRef Name="SorumluPersonelNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SoftFaaliyetEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Birims" EntityType="Self.Birim" />
+          <EntitySet Name="Calisans" EntityType="Self.Calisan" />
+          <EntitySet Name="Kiyafets" EntityType="Self.Kiyafet" />
+          <EntitySet Name="Malzemelers" EntityType="Self.Malzemeler" />
+          <EntitySet Name="Musterilers" EntityType="Self.Musteriler" />
+          <EntitySet Name="Personels" EntityType="Self.Personel" />
+          <EntitySet Name="Projes" EntityType="Self.Proje" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Unvans" EntityType="Self.Unvan" />
+          <EntitySet Name="YetkiDuzeyis" EntityType="Self.YetkiDuzeyi" />
+          <AssociationSet Name="FK_Proje_Birim" Association="Self.FK_Proje_Birim">
+            <End Role="Birim" EntitySet="Birims" />
+            <End Role="Proje" EntitySet="Projes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Unvan" Association="Self.FK_Personel_Unvan">
+            <End Role="Unvan" EntitySet="Unvans" />
+            <End Role="Personel" EntitySet="Personels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_YetkiDuzeyi" Association="Self.FK_Personel_YetkiDuzeyi">
+            <End Role="YetkiDuzeyi" EntitySet="YetkiDuzeyis" />
+            <End Role="Personel" EntitySet="Personels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proje_Personel" Association="Self.FK_Proje_Personel">
+            <End Role="Personel" EntitySet="Personels" />
+            <End Role="Proje" EntitySet="Projes" />
+          </AssociationSet>
+          <FunctionImport Name="Mlistele" ReturnType="Collection(SoftFaaliyetModel.Mlistele_Result)" />
+          <FunctionImport Name="MSil">
+            <Parameter Name="MusteriID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="MusteriEkle">
+            <Parameter Name="AdSoyad" Mode="In" Type="String" />
+            <Parameter Name="Yas" Mode="In" Type="Int32" />
+            <Parameter Name="Maas" Mode="In" Type="Decimal" />
+            <Parameter Name="Ciro" Mode="In" Type="Decimal" />
+            <Parameter Name="Bakiye" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="MusteriYenile">
+            <Parameter Name="MusteriID" Mode="In" Type="Int32" />
+            <Parameter Name="AdSoyad" Mode="In" Type="String" />
+            <Parameter Name="Yas" Mode="In" Type="Int32" />
+            <Parameter Name="Maas" Mode="In" Type="Decimal" />
+            <Parameter Name="Ciro" Mode="In" Type="Decimal" />
+            <Parameter Name="Bakiye" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SoftFaaliyetModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SoftFaaliyetModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="Mlistele_Result">
+          <Property Type="Int32" Name="MusteriID" Nullable="false" />
+          <Property Type="String" Name="AdSoyad" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Yas" Nullable="true" />
+          <Property Type="Decimal" Name="Maas" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Ciro" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Bakiye" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SoftFaaliyetModelStoreContainer" CdmEntityContainer="SoftFaaliyetEntities">
+          <EntitySetMapping Name="Birims">
+            <EntityTypeMapping TypeName="SoftFaaliyetModel.Birim">
+              <MappingFragment StoreEntitySet="Birim">
+                <ScalarProperty Name="BirimNo" ColumnName="BirimNo" />
+                <ScalarProperty Name="BirimAdi" ColumnName="BirimAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Calisans">
+            <EntityTypeMapping TypeName="SoftFaaliyetModel.Calisan">
+              <MappingFragment StoreEntitySet="Calisan">
+                <ScalarProperty Name="CalisanNo" ColumnName="CalisanNo" />
+                <ScalarProperty Name="Adsoyad" ColumnName="Adsoyad" />
+                <ScalarProperty Name="Yas" ColumnName="Yas" />
+                <ScalarProperty Name="Maas" ColumnName="Maas" />
+                <ScalarProperty Name="Mezuniyet" ColumnName="Mezuniyet" />
+                <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+                <ScalarProperty Name="Memleket" ColumnName="Memleket" />
+                <ScalarProperty Name="Şube" ColumnName="Şube" />
+                <ScalarProperty Name="Prim" ColumnName="Prim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kiyafets">
+            <EntityTypeMapping TypeName="SoftFaaliyetModel.Kiyafet">
+              <MappingFragment StoreEntitySet="Kiyafet">
+                <ScalarProperty Name="KiyafetNo" ColumnName="KiyafetNo" />
+                <ScalarProperty Name="KiyafetAdi" ColumnName="KiyafetAdi" />
+                <ScalarProperty Name="Beden" ColumnName="Beden" />
+                <ScalarProperty Name="KumasTipi" ColumnName="KumasTipi" />
+                <ScalarProperty Name="Renk" ColumnName="Renk" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="KiyafetModel" ColumnName="KiyafetModel" />
+                <ScalarProperty Name="Yas" ColumnName="Yas" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Mensei" ColumnName="Mensei" />
+                <ScalarProperty Name="SubeSehir" ColumnName="SubeSehir" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Malzemelers">
+            <EntityTypeMapping TypeName="SoftFaaliyetModel.Malzemeler">
+              <MappingFragment StoreEntitySet="Malzemeler">
+                <ScalarProperty Name="MalzemeNo" ColumnName="MalzemeNo" />
+                <ScalarProperty Name="MalzemeAdi" ColumnName="MalzemeAdi" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Musterilers">
+            <EntityTypeMapping TypeName="SoftFaaliyetModel.Musteriler">
+              <MappingFragment StoreEntitySet="Musteriler">
+                <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Yas" ColumnName="Yas" />
+                <ScalarProperty Name="Maas" ColumnName="Maas" />
+                <ScalarProperty Name="Ciro" ColumnName="Ciro" />
+                <ScalarProperty Name="Bakiye" ColumnName="Bakiye" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personels">
+            <EntityTypeMapping TypeName="SoftFaaliyetModel.Personel">
+              <MappingFragment StoreEntitySet="Personel">
+                <ScalarProperty Name="PersonelNo" ColumnName="PersonelNo" />
+                <ScalarProperty Name="PersonelAdSoyadi" ColumnName="PersonelAdSoyadi" />
+                <ScalarProperty Name="CalistigiBirimNo" ColumnName="CalistigiBirimNo" />
+                <ScalarProperty Name="UnvanKodu" ColumnName="UnvanKodu" />
+                <ScalarProperty Name="DahilOlduguProjelerNo" ColumnName="DahilOlduguProjelerNo" />
+                <ScalarProperty Name="YetkiDuzeyi" ColumnName="YetkiDuzeyi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projes">
+            <EntityTypeMapping TypeName="SoftFaaliyetModel.Proje">
+              <MappingFragment StoreEntitySet="Proje">
+                <ScalarProperty Name="ProjeKodu" ColumnName="ProjeKodu" />
+                <ScalarProperty Name="ProjeAdi" ColumnName="ProjeAdi" />
+                <ScalarProperty Name="SorumluPersonelNo" ColumnName="SorumluPersonelNo" />
+                <ScalarProperty Name="AitOlduguBirimNo" ColumnName="AitOlduguBirimNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SoftFaaliyetModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Unvans">
+            <EntityTypeMapping TypeName="SoftFaaliyetModel.Unvan">
+              <MappingFragment StoreEntitySet="Unvan">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UnvanKarsiligi" ColumnName="UnvanKarsiligi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YetkiDuzeyis">
+            <EntityTypeMapping TypeName="SoftFaaliyetModel.YetkiDuzeyi">
+              <MappingFragment StoreEntitySet="YetkiDuzeyi">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="YetkiDurumKodu" ColumnName="YetkiDurumKodu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Mlistele" FunctionName="SoftFaaliyetModel.Store.Mlistele">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SoftFaaliyetModel.Mlistele_Result">
+                <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Yas" ColumnName="Yas" />
+                <ScalarProperty Name="Maas" ColumnName="Maas" />
+                <ScalarProperty Name="Ciro" ColumnName="Ciro" />
+                <ScalarProperty Name="Bakiye" ColumnName="Bakiye" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MSil" FunctionName="SoftFaaliyetModel.Store.MSil" />
+          <FunctionImportMapping FunctionImportName="MusteriEkle" FunctionName="SoftFaaliyetModel.Store.MusteriEkle" />
+          <FunctionImportMapping FunctionImportName="MusteriYenile" FunctionName="SoftFaaliyetModel.Store.MusteriYenile" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SoftFaaliyetModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SoftFaaliyetModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SoftFaaliyetModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SoftFaaliyetModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SoftFaaliyetModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SoftFaaliyetModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SoftFaaliyetModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SoftFaaliyetModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SoftFaaliyetModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
