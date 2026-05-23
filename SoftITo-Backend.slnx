@@ -8,6 +8,7 @@
   <Project Path="Forms_Intro/Forms_Intro.csproj" Id="ae276681-2174-4d04-a960-b64aa796faa2" />
   <Project Path="Functions/Functions.csproj" Id="b70454b3-2a67-4887-b491-90cd00e80acd" />
   <Project Path="Loops/Loops.csproj" Id="036b47b2-0876-43a2-b1aa-70c697574aea" />
+  <Project Path="ModelFirst/ModelFirst.csproj" Id="7ef4e866-1b5a-4230-ba27-c50936900895" />
   <Project Path="MyMiniConsoleRestaurant/MyMiniConsoleRestaurant.csproj" Id="017aac0d-d8fb-4334-9057-5af4e5e91f0a" />
   <Project Path="NejCafe/NejCafe.csproj" Id="77b1d1cb-3467-43d1-95cf-26c1af957908" />
   <Project Path="NewFormProject/GroupBox.csproj" Id="ef9e6a34-8e2a-4b69-a400-d18630bee9fe" />

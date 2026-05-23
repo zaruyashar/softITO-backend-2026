@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DORDUNCUPROJE.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DORDUNCUPROJEStoreContainer">
+    <EntitySet Name="Araclars" EntityType="DORDUNCUPROJE.Store.Araclars" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Subelers" EntityType="DORDUNCUPROJE.Store.Subelers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Kullanicilars" EntityType="DORDUNCUPROJE.Store.Kullanicilars" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Musterilers" EntityType="DORDUNCUPROJE.Store.Musterilers" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Araclars">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Plaka" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Marka" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Yil" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subelers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubeAdi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sehir" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adres" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kullanicilars">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciAdi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sifre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdSoyadi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Rol" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Musterilers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdSoyadi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TcKimlik" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Eposta" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DORDUNCUPROJE" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DORDUNCUPROJEContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Araclars" EntityType="DORDUNCUPROJE.Araclar" />
+          <EntitySet Name="Subelers" EntityType="DORDUNCUPROJE.Subeler" />
+          <EntitySet Name="Kullanicilars" EntityType="DORDUNCUPROJE.Kullanicilar" />
+          <EntitySet Name="Musterilers" EntityType="DORDUNCUPROJE.Musteriler" />
+        </EntityContainer>
+        <EntityType Name="Araclar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Plaka" Type="String" Nullable="false" />
+          <Property Name="Marka" Type="String" Nullable="false" />
+          <Property Name="Model" Type="String" Nullable="false" />
+          <Property Name="Yil" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subeler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubeAdi" Type="String" Nullable="false" />
+          <Property Name="Sehir" Type="String" Nullable="false" />
+          <Property Name="Telefon" Type="String" Nullable="false" />
+          <Property Name="Adres" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" Nullable="false" />
+          <Property Name="Sifre" Type="String" Nullable="false" />
+          <Property Name="AdSoyadi" Type="String" Nullable="false" />
+          <Property Name="Rol" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyadi" Type="String" Nullable="false" />
+          <Property Name="TcKimlik" Type="String" Nullable="false" />
+          <Property Name="Telefon" Type="String" Nullable="false" />
+          <Property Name="Eposta" Type="String" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DORDUNCUPROJEStoreContainer" CdmEntityContainer="DORDUNCUPROJEContainer">
+    <EntitySetMapping Name="Araclars">
+      <EntityTypeMapping TypeName="IsTypeOf(DORDUNCUPROJE.Araclar)">
+        <MappingFragment StoreEntitySet="Araclars">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+          <ScalarProperty Name="Marka" ColumnName="Marka" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subelers">
+      <EntityTypeMapping TypeName="IsTypeOf(DORDUNCUPROJE.Subeler)">
+        <MappingFragment StoreEntitySet="Subelers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SubeAdi" ColumnName="SubeAdi" />
+          <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicilars">
+      <EntityTypeMapping TypeName="IsTypeOf(DORDUNCUPROJE.Kullanicilar)">
+        <MappingFragment StoreEntitySet="Kullanicilars">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="AdSoyadi" ColumnName="AdSoyadi" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Musterilers">
+      <EntityTypeMapping TypeName="IsTypeOf(DORDUNCUPROJE.Musteriler)">
+        <MappingFragment StoreEntitySet="Musterilers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AdSoyadi" ColumnName="AdSoyadi" />
+          <ScalarProperty Name="TcKimlik" ColumnName="TcKimlik" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

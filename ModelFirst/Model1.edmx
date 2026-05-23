@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Ogrencis" EntityType="Model1.Store.Ogrencis" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Derslers" EntityType="Model1.Store.Derslers" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="OgrenciDersler" Association="Model1.Store.OgrenciDersler">
+      <End Role="Ogrenci" EntitySet="Ogrencis" />
+      <End Role="Dersler" EntitySet="Derslers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Ogrencis">
+    <Key>
+      <PropertyRef Name="OgrenciNo" />
+    </Key>
+    <Property Name="OgrenciNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdSoyadi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Yas" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Derslers">
+    <Key>
+      <PropertyRef Name="DersNo" />
+    </Key>
+    <Property Name="DersNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DersKredisi" Type="int" Nullable="false" />
+    <Property Name="DersAKTS" Type="int" Nullable="false" />
+    <Property Name="OgrenciNo" Type="int" Nullable="false" />
+    <Property Name="OgrenciOgrenciNo" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="OgrenciDersler">
+    <End Role="Ogrenci" Type="Model1.Store.Ogrencis" Multiplicity="1" />
+    <End Role="Dersler" Type="Model1.Store.Derslers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogrenci">
+        <PropertyRef Name="OgrenciNo" />
+      </Principal>
+      <Dependent Role="Dersler">
+        <PropertyRef Name="OgrenciOgrenciNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ogrencis" EntityType="Model1.Ogrenci" />
+          <EntitySet Name="Derslers" EntityType="Model1.Dersler" />
+          <AssociationSet Name="OgrenciDersler" Association="Model1.OgrenciDersler">
+            <End Role="Ogrenci" EntitySet="Ogrencis" />
+            <End Role="Dersler" EntitySet="Derslers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Ogrenci">
+          <Key>
+            <PropertyRef Name="OgrenciNo" />
+          </Key>
+          <Property Name="OgrenciNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyadi" Type="String" Nullable="false" />
+          <Property Name="Yas" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Derslers" Relationship="Model1.OgrenciDersler" FromRole="Ogrenci" ToRole="Dersler" />
+        </EntityType>
+        <EntityType Name="Dersler">
+          <Key>
+            <PropertyRef Name="DersNo" />
+          </Key>
+          <Property Name="DersNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DersKredisi" Type="Int32" Nullable="false" />
+          <Property Name="DersAKTS" Type="Int32" Nullable="false" />
+          <Property Name="OgrenciNo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ogrenci" Relationship="Model1.OgrenciDersler" FromRole="Dersler" ToRole="Ogrenci" />
+          <Property Name="OgrenciOgrenciNo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="OgrenciDersler">
+          <End Type="Model1.Ogrenci" Role="Ogrenci" Multiplicity="1" />
+          <End Type="Model1.Dersler" Role="Dersler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ogrenci">
+              <PropertyRef Name="OgrenciNo" />
+            </Principal>
+            <Dependent Role="Dersler">
+              <PropertyRef Name="OgrenciOgrenciNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Ogrencis">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Ogrenci)">
+        <MappingFragment StoreEntitySet="Ogrencis">
+          <ScalarProperty Name="OgrenciNo" ColumnName="OgrenciNo" />
+          <ScalarProperty Name="AdSoyadi" ColumnName="AdSoyadi" />
+          <ScalarProperty Name="Yas" ColumnName="Yas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Derslers">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Dersler)">
+        <MappingFragment StoreEntitySet="Derslers">
+          <ScalarProperty Name="DersNo" ColumnName="DersNo" />
+          <ScalarProperty Name="DersKredisi" ColumnName="DersKredisi" />
+          <ScalarProperty Name="DersAKTS" ColumnName="DersAKTS" />
+          <ScalarProperty Name="OgrenciNo" ColumnName="OgrenciNo" />
+          <ScalarProperty Name="OgrenciOgrenciNo" ColumnName="OgrenciOgrenciNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
