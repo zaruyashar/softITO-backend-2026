@@ -22,7 +22,7 @@ I have officially completed the intensive training program at SoftITo! In this r
 
 ## 💻 Technology Stack
 
-The technologies and concepts I have learned and brought to life in my projects during this journey:
+The technologies and concepts I have mastered and brought to life in my projects during this journey:
 
 * **C# & .NET:** The core building blocks.
 * **MSSQL & ADO.NET:** Data management and database connectivity.
