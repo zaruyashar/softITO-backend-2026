@@ -13,7 +13,9 @@
 I have officially completed the intensive training program at SoftITo! In this repository, you can see how I crack algorithms and build solid architectures from scratch. The finish line is just a new beginning; the coffee is brewed, the IDE is open, and I am fully focused on learning and building more!
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&pause=1000&color=27F705&width=1100&separator=%7C&lines=%22I+code.+Therefore+I+Environment.Exit(0);%22+%E2%80%94+zaruyashar,+a+future+High-Tech+Solutions+Architect" alt="Typing SVG Quote" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&pause=1000&color=27F705&width=750&lines=%22I+code.+Therefore+I+Environment.Exit(0);%22" alt="Typing SVG Quote" />
+  <br>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&pause=1000&color=27F705&width=750&lines=%E2%80%94+zaruyashar,+a+future+High-Tech+Solutions+Architect" alt="Typing SVG Signature" />
 </div>
 
 ---
