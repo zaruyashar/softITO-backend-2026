@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggCGvnk5W/giphy.gif" width="250" alt="Coding and Learning GIF">
 
-  # 🚀 SoftITo Backend Bootcamp 2026: Mission Accomplished!
+  # 🚀 SoftITo Backend ONLINE 2026: Mission Accomplished!
 
   *Hi there! This was the digital diary of my Istanbul Chamber of Commerce backend training journey. What started as an intensive 3-week bootcamp has now become the foundation of my backend development career.*
 </div>
