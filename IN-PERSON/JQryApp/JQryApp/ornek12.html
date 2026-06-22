@@ -1,0 +1,46 @@
+﻿<html>
+<head>
+    <title>Kutuyu sağa, sola, yukarı ve aşağı hareket ettirme</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //4 tane buton olucak sağ sol yukarı aşağı
+        //tek bir kutuyu sağ butona basınca sağa, sola basınca sola , aşağı basınca aşağı,
+        //yukarı basınca yukarı hareket ettireceksiniz.
+        //animate() metodunu kullanarak yapabilirsiniz.
+        $(document).ready(function () {
+            $("#sol").click(function () {
+                $("div").animate({ marginLeft: '-=10px' })
+            })
+            $("#sag").click(function () {
+                $("div").animate({ marginLeft: '+=10px' })
+            })
+            $("#yukarı").click(function () {
+                $("div").animate({ marginTop: '-=10px' })
+            })
+            $("#asagi").click(function () {
+                $("div").animate({ marginTop: '+=10px' })
+            })
+        });
+    </script>
+
+
+    <style>
+        div {
+            background-color: red;
+            width: 120px;
+            height: 120px;
+            margin-left: 200px;
+            margin-top: 300px; /*position: relative;*/
+        }
+    </style>
+</head>
+
+<body>
+    <button id="sag">Sağ</button>
+    <button id="sol">Sol</button>
+    <button id="yukarı">Yukarı</button>
+    <button id="asagi">Aşağı</button>
+    <hr>
+    <div id="kutu"></div>
+</body>
+</html>

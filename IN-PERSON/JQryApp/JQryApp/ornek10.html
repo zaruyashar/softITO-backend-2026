@@ -1,0 +1,30 @@
+﻿<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //Combo box içerisinde renkler olacak. Combo boxtan seçilen renk
+        //Kırmızı,mavi,yeşil, sarı...
+        //var olan parağrafın rengini değiştirecek.
+        $(document).ready(function () {
+            $("#secim").change(function () {
+                var s = $("#secim").val(); $("#prg1").css({ "color": s });
+            })
+        })
+
+
+    </script>
+</head>
+<body>
+    <p id="prg1"><strong>Lorem Ipsum</strong>, dizgi ve baskı endüstrisinde             kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının             bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak             karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak             kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı             zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda             Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması             ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren             masaüstü yayıncılık yazılımları ile popüler olmuştur.</p>
+    <br><br>
+    <select name="secim" id="secim">
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+        <option value="black">Black</option>
+        <option value="pink">Pink</option>
+        <option value="orange">Orange</option>
+        <option value="blue">Blue</option>
+    </select>
+</body>
+</html>

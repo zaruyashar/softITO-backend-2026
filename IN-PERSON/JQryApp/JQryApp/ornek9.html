@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+    <title>
+
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //Bir tane text iki tane buton olucak.
+        //Kullanıcıdan text içerisinden aldığımız değerleri,ekle butonuna
+        //basınca diziye ekleyeceksiniz.
+        //Listele butonuna basınca değerler listelenecek.
+        $(document).ready(function () {
+            var metin = []; $("#btn1").click(function () {
+                //push metodu ile ekleme yapıyoruz.
+                metin.push($("#txtAd").val());
+                $("#txtAd").val("");
+            })
+            $("#btn2").click(function () {
+                $("#div1").text(""); for (var i = 0; i < metin.length; i++) {
+                    $("#div1").append(metin[i] + " ");
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    Adınız : <input type="text" id="txtAd">
+    <br>
+    <input type="button" id="btn1" value="EKLE">
+    <br>
+    <br>
+    <input type="button" id="btn2" value="LİSTELE">
+    <br>
+    <div id="div1"></div>
+</body>
+
+</html>

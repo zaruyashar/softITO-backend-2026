@@ -1,0 +1,129 @@
+﻿<html>
+<head>
+    <title>Event örnekleri</title>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/jquery/dist/jquery.slim.min.js"></script>
+    <script src="lib/jquery/dist/jquery.slim.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+            integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+            crossorigin="anonymous"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $(".metin1").append("*");
+            })
+
+            $("#btn2").dblclick(function () {
+                $(".metin2").append("*");
+            })
+
+            $("#btn3").mouseenter(function () {
+                $(".metin3").append("*");
+            })
+
+            $("#btn4").mouseleave(function () {
+                $(".metin4").append("*");
+            })
+
+            $("#btn5").mousedown(function () {
+                $(".metin5").append("*");
+            })
+
+            $("#btn6").mouseup(function () {
+                $(".metin6").append("*");
+            })
+
+            $("#btn7").hover(function () {
+                $(".metin7").append("x");
+            },
+                function () {
+                    $(".metin7").append("y");
+                })
+
+            $("#kutu1").focus(function () {
+                $("#kutu1").css("background-color", "yellow");
+            })
+
+            $("#kutu1").blur(function () {
+                $("#kutu1").css("background-color", "red");
+            })
+
+            $(window).resize(function () {
+                $(".metin8").append($(window).width() + "-");
+            })
+        })
+
+    </script>
+</head>
+
+
+<body>
+    <table item-width="100%" border="2">
+        <tr>
+            <td>Eventin Adı ve anlamı</td>
+            <td>Tetikleyici</td>
+            <td>Etkilenecek elemanlar</td>
+        </tr>
+
+        <tr>
+            <td>click - Tıklama</td>
+            <td><button id="btn1">Tıkla</button></td>
+            <td><p class="metin1">&nbsp;</p></td>
+        </tr>
+
+        <tr>
+            <td>dbclick - Çift Tıklama</td>
+            <td><button id="btn2">Çift Tıkla</button></td>
+            <td><p class="metin2">&nbsp;</p></td>
+        </tr>
+
+        <tr>
+            <td>mouseenter - Fare ile üzerine gelme</td>
+            <td><button id="btn3">Fare üzerimde</button></td>
+            <td><p class="metin3">&nbsp;</p></td>
+        </tr>
+
+        <tr>
+            <td>mouseleave - Fare üzerinden çekildiğinde</td>
+            <td><button id="btn4">Fare üzerimden çekildi</button></td>
+            <td><p class="metin4">&nbsp;</p></td>
+        </tr>
+
+        <tr>
+            <td>mousedown - Farenin tuşuna basıldığında</td>
+            <td><button id="btn5">Fare tuşuna basıldı</button></td>
+            <td><p class="metin5">&nbsp;</p></td>
+        </tr>
+
+        <tr>
+            <td>mouseup - Fare tuşu bırakıldığında</td>
+            <td><button id="btn6">Fare tuşu bırakıldı</button></td>
+            <td><p class="metin6">&nbsp;</p></td>
+        </tr>
+
+        <tr>
+            <td>hover - mouseenter ve mouseleave olayları için</td>
+            <td><button id="btn7">Hover eventi</button></td>
+            <td><p class="metin7">&nbsp;</p></td>
+        </tr>
+
+        <tr>
+            <td>focus - odaklanma - bir form elemanına tıklandığında aktifleştirme</td>
+            <td colspan="2" rowspan="2"><input type="text" name="kutu1" id="kutu1"></td>
+            <td colspan="2" rowspan="2"><input type="text" name="kutu2" id="kutu2"></td>
+        </tr>
+
+        <tr>
+            <td>blur - bir form elemanını terk eder.</td>
+        </tr>
+
+        <tr>
+            <td>resize - pencere boyutunu değiştirir.</td>
+            <td colspan="2"><p class="metin8">&nbsp;</p></td>
+        </tr>
+    </table>
+</body>
+</html>

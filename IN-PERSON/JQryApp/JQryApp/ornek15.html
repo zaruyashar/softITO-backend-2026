@@ -1,0 +1,84 @@
+﻿<html>
+<head>
+    <title>Resim Kaldır-Ekle</title>
+    <script src="lib/jquery-3.4.0.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //checkbox olucak bir tane image
+        //checkbox'ın adı RESMİ KALDIR/GÖSTER
+        //checklediğinde resim kalkıcak, tiki kaldırdığında resim görünücek.
+        $(document).ready(function () {
+            //on metodu ile event ismini ekledik ve eventi tetiklettirdik.
+            $("#chck1").on("change", function () {
+                //prop metodu ile elemente yeni bir özellik ekledik.
+                if ($(this).prop("checked") == true) {
+                    $("#resim1").slideDown(3000);
+                }
+                else {
+                    $("#resim1").slideUp(3000);
+                }
+            })
+            $("#kutu1").click(function () {
+                $("#kutu2").slideUp(2000).slideDown(4000);
+            })
+
+            $("input[type = 'checkbox']").click(function () {
+                var a = $("input[type = 'submit']").attr("disabled");
+                if (a == "disabled") {
+                    $("input[type= 'submit']").attr("disabled", false);
+                }
+                else {
+                    $("input[type='submit']").attr("disabled", true);
+                }
+            })
+
+            $("#chck2").click(function () {
+                //btn1'e attr() metodu ile disabled özelliği verip, a değişkenine atadık.
+                var a = $("#btn1").attr("disabled");
+                //Sonra o disabled özelliği if sorgusu içerisinde değerini atadık.(F-T)
+                if (a == "disabled") {
+                    $("#btn1").attr("disabled", false);
+                }
+                else {
+                    $("#btn1").attr("disabled", true);
+                }
+            })
+            var sozler = ["Duygu ile boyanmış her portre bakıcının değil, sanatçının portresidir. Oscar Wilde", "Cennet bize aşık bir adamla sabır verir.", "Rotanızı, geçen her geminin ışığıyla değil yıldızlara göre ayarlayın.", "Yapılacak yığınla hata varken, biz hep aynı hatayı tekrar tekrar yaparız.", "Sabır; yüzünü ekşitmeden acıyı yudumlamaktır."];
+            var sayi = Math.floor(Math.random() * sozler.length);
+            $("#soz").html(sozler[sayi]);
+        });
+    </script>
+
+    <style>
+        #kutu2 {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+        }
+
+        #kutu1 {
+            width: 50px;
+            height: 20px;
+            background-color: pink;
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="nar.png" alt="resim" id="resim1">
+    <br><br>
+    <input type="checkbox" name="chck1" id="chck1" checked> Resmi Kaldır/Göster
+    <hr>
+    <div id="kutu1">Tıkla</div>
+    <div id="kutu2"></div>
+    <hr>
+    <!-- Bir tane Okudum,Kabul ediyorum checkboxı, bir tane submit buton,başta buton pasif,checkboxa tıklayınca buton aktif hale gelicek, checkboxın tikini kaldırınca buton pasif gelicek.  -->
+    <input type="checkbox" id="chck2"> Okudum,Kabul Ediyorum.
+    <br>
+    <input type="submit" id="btn1" value="GÖNDER" disabled>
+    <!--Güzel sözlerin olduğu biz dizi yaratıp, rastgele günün sözü olarak             gösteriniz. -->
+    <hr>
+    <div id="soz"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<html>
+<head>
+    <title>Renk değiştirme örneği</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="lib/jquery-3.4.0.slim.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //kutuları tıkladığımız zaman, inputtaki renk panelinden seçilen renk
+            //kutunun rengi olur.
+            $(".kutu").click(function () {
+                var secilenrenk = $("#renk").val();
+                $(this).css("background-color", secilenrenk)
+            })
+        });
+    </script>
+    <style>
+        .kutu {
+            width: 200px;
+            height: 150px;
+            float: left;
+            border: 2px solid black;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <input type="color" id="renk">
+    <br>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+</body>
+</html>

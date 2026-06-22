@@ -1,0 +1,24 @@
+﻿<html>
+<head>
+    <title>Kullanıcıdan aldığımız genişlik ve yükseklikle div içerisinde dikdörtgen oluşturma</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                var g = Number($("#genislik").val());
+                var y = Number($("#yukseklik").val()); $("#kutu").css({ "width": g, "height": y, "border": "1px solid black", "background-color": "blue", "margin": "5px" });
+            })
+        });
+    </script>
+</head>
+
+<body>
+    Genişlik :
+    <input type="text" id="genislik">
+    Yükseklik :
+    <input type="text" id="yukseklik">
+    <button id="btn">ÇİZ</button>
+    <br>
+    <div id="kutu"></div>
+</body>
+</html>

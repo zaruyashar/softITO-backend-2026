@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+    <title>FadeIn-FadeOut-FadeToggle-FadeTo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () { $("#kutu1").fadeIn(); $("#kutu2").fadeIn("slow"); $("#kutu3").fadeIn(3000); })
+            $("#btn2").click(function () { $("#kutu1").fadeOut(); $("#kutu2").fadeOut("slow"); $("#kutu3").fadeOut(2000); })
+            $("#btn3").click(function () { $("#kutu1").fadeToggle(); $("#kutu2").fadeToggle("slow"); $("#kutu3").fadeToggle(1000); })
+            $("#btn4").click(function () { $("#kutu1").fadeTo("fast", 0.1); $("#kutu2").fadeTo("slow", 0.2); $("#kutu3").fadeTo(3000, 0.5); })
+        });</script>
+    <style>
+        .kutu {
+            display: none;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <table border="2">
+        <tr>
+            <td item-width="130">
+                <button id="btn1">FadeIn Metodu</button>
+            </td>
+            <td item-width="150" rowspan="4">
+                <div id="kutu1" class="kutu">Kutu1</div>
+                <div id="kutu2" class="kutu">Kutu2</div>
+                <div id="kutu3" class="kutu">Kutu3</div>
+            </td>
+        </tr>
+        <tr>
+            <td item-width="130"><button id="btn2">FadeOut Metodu</button></td>
+        </tr>
+        <tr>
+            <td item-width="130"><button id="btn3">FadeToggle Metodu</button></td>
+        </tr>
+        <tr>
+            <td item-width="130"><button id="btn4">FadeTo Metodu</button></td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].yoneticiler
+(
+[ID] INT NOT NULL PRIMARY KEY,
+[AdSoyad] VARCHAR(50) NULL,
+[Email] VARCHAR(50) NULL,
+[Telefon] VARCHAR(50) NULL,
+[Adres] VARCHAR(50) NULL,
+[Giris] VARCHAR(50) NULL
+)

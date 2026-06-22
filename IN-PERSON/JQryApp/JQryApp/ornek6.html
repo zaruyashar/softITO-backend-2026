@@ -1,0 +1,78 @@
+﻿<html>
+<head>
+    <title>SlideUp-SlideDown ve SlideToggle örneği</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //SlideUp, görünen divi kapar. Yukarı kaydırır.
+        //SlideDown, görünmeyen divi gösterir. Aşağı kaydırır.
+        //SlideToggle, görünüyorsa kapatır, kapalıysa gösterir.
+        $(document).ready(function () {
+            $("#test").click(function () {
+                $("#test2").slideUp("fast");
+                //içerisine fast, slow, 1000 milisaniye
+            })
+            $("#test3").click(function () { $("#test4").slideUp("slow"); })
+            $("#test5").click(function () { $("#test6").slideUp(2000); })
+            $("#test7").click(function () { $("#test8").slideDown("fast"); })
+            $("#test9").click(function () { $("#test10").slideDown("slow"); })
+            $("#test11").click(function () { $("#test12").slideDown(2000); })
+            $("#test13").click(function () { $("#test14").slideToggle("fast"); })
+            $("#test15").click(function () { $("#test16").slideToggle("slow"); })
+            $("#test17").click(function () { $("#test18").slideToggle(2000); })
+        });
+    </script>
+    <style>
+        /*#test, #test2,#test3,#test4,#test5,#test6,#test7.......{*/
+
+        .div {
+            padding: 5px;
+            text-align: center;
+            background-color: pink;
+            border: 3px solid black;
+        }
+
+        #test2, #test4, #test6 { /*2., 4. ve 6. idli divleri görünmez yapar. */
+            width: 900px;
+            height: 500px;
+            background-color: blue;
+        }
+
+        #test8, #test10, #test12 {
+            background-color: azure;
+            display: none;
+            width: 900px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="test" class="div">Slideup fast testi yapılacak</div>
+    <div id="test2">Örneklere devam ediyoruz.</div>
+    <hr>
+    <div id="test3" class="div">Slideup slow testi yapılacak</div>
+    <div id="test4">Örneklere devam ediyoruz.</div>
+    <hr>
+    <div id="test5" class="div">Slideup milisaniye testi yapılacak</div>
+    <div id="test6">Örneklere devam ediyoruz.</div>
+    <hr>
+    <div id="test7" class="div">Slidedown fast testi yapılacak</div>
+    <div id="test8">Örneklere devam ediyoruz.</div>
+    <hr>
+    <div id="test9" class="div">Slidedown slow testi yapılacak</div>
+    <div id="test10">Örneklere devam ediyoruz.</div>
+    <hr>
+    <div id="test11" class="div">Slidedown milisaniye testi yapılacak</div>
+    <div id="test12">Örneklere devam ediyoruz.</div>
+    <hr>
+    <div id="test13" class="div">Slidetoogle fast testi yapılacak</div>
+    <div id="test14">Örneklere devam ediyoruz.</div>
+    <hr>
+    <div id="test15" class="div">Slidetoogle slow testi yapılacak</div>
+    <div id="test16">Örneklere devam ediyoruz.</div>
+    <hr>
+    <div id="test17" class="div">Slidetoogle milisaniye testi yapılacak</div>
+    <div id="test18">Örneklere devam ediyoruz.</div>
+
+</body>
+</html>
+

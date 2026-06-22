@@ -1,0 +1,121 @@
+﻿<html>
+<head>
+    <title>Şanslı kutu örneği</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //6 tane kutu yapın.
+        //Her kutu içerisinde buton olucak.
+        //Bir tane şanslı kutu olucak.
+        //Kullanıcı kutu üzerindeki butona basınca 5 tanesinde şanslı kutu bu değildir
+        //yazdırıp, opacity özelliğini kullanarak silik yapalım.
+        //Şanslı kutuyu seçtiğinde alert ile şanslı kutuyu buldunuz ve opacity kullanarak
+        //daha koyu bir görüntü olsun.
+        $(document).ready(function () {
+            $("#kutu1").fadeTo("slow", 0.5);
+            $("#kutu2").fadeTo("slow", 0.5);
+            $("#kutu3").fadeTo("slow", 0.5);
+            $("#kutu4").fadeTo("slow", 0.5);
+            $("#kutu5").fadeTo("slow", 0.5);
+            $("#kutu6").fadeTo("slow", 0.5);
+            $("#btnA").click(function () {
+                $("#kutu1").fadeTo("slow", 0.1);
+                alert("Yanlış kutu seçtiniz!");
+            })
+            $("#btnB").click(function () {
+                $("#kutu2").fadeTo("slow", 0.1);
+                alert("Yanlış kutu seçtiniz!");
+            })
+            $("#btnC").click(function () {
+                $("#kutu3").fadeTo("slow", 0.9);
+                alert("Şanslı kutuyu buldunuz!");
+            })
+            $("#btnD").click(function () {
+                $("#kutu4").fadeTo("slow", 0.1);
+                alert("Yanlış kutu seçtiniz!");
+            })
+            $("#btnE").click(function () {
+                $("#kutu5").fadeTo("slow", 0.1); alert("Yanlış kutu seçtiniz!");
+            })
+            $("#btnF").click(function () {
+                $("#kutu6").fadeTo("slow", 0.1);
+                alert("Yanlış kutu seçtiniz!");
+            })
+
+
+
+
+        });
+    </script>
+
+
+    <style>
+        #kutu1 {
+            background-color: red;
+            width: 120px;
+            height: 120px;
+            float: left;
+            margin-left: 5px;
+        }
+
+        #kutu2 {
+            background-color: red;
+            width: 120px;
+            height: 120px;
+            float: left;
+            margin-left: 5px;
+        }
+
+        #kutu3 {
+            background-color: red;
+            width: 120px;
+            height: 120px;
+            float: left;
+            margin-left: 5px;
+        }
+
+        #kutu4 {
+            background-color: red;
+            width: 120px;
+            height: 120px;
+            float: left;
+            margin-left: 5px;
+        }
+
+        #kutu5 {
+            background-color: red;
+            width: 120px;
+            height: 120px;
+            float: left;
+            margin-left: 5px;
+        }
+
+        #kutu6 {
+            background-color: red;
+            width: 120px;
+            height: 120px;
+            float: left;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="kutu1">
+        <button id="btnA">A</button>
+    </div>
+    <div id="kutu2">
+        <button id="btnB">B</button>
+    </div>
+    <div id="kutu3">
+        <button id="btnC">C</button>
+    </div>
+    <div id="kutu4">
+        <button id="btnD">D</button>
+    </div>
+    <div id="kutu5">
+        <button id="btnE">E</button>
+    </div>
+    <div id="kutu6">
+        <button id="btnF">F</button>
+    </div>
+</body>
+</html>

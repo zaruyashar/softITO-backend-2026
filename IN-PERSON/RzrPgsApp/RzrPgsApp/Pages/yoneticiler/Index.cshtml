@@ -1,0 +1,41 @@
+﻿@page
+@model RzrPgsApp.Pages.yoneticiler.IndexModel
+@{
+}
+<br />
+
+<h2>Yöneticiler Listesi</h2>
+<a class="btn btn-primary btn-sm" href="/yoneticiler/Create">Yönetici Ekle</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Yönetici No</th>
+            <th>Ad Soyad</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Adres</th>
+            <th>Giriş Tarihi</th>
+            <th>İşlem</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listele)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.AdSoyad</td>
+                <td>@item.Email</td>
+                <td>@item.Telefon</td>
+                <td>@item.Adres</td>
+                <td>@item.Giris</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/yoneticiler/Edit?id=@item.ID">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/yoneticiler/Delete?id=@item.ID">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

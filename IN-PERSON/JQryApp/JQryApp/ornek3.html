@@ -1,0 +1,94 @@
+﻿<html>
+<head>
+    <title>Aşama aşama gizleme metotları/özellikleri</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () { $("#kutu1").hide(); })
+            $("#btn2").click(function () { $("#kutu2").hide(10000); })
+            $("#btn3").click(function () { $("#kutu3").hide("slow"); })
+            $("#btn4").click(function () { $("#kutu4").show(); })
+            $("#btn5").click(function () { $("#kutu5").show(2000); })
+            $("#btn6").click(function () { $("#kutu6").show("slow"); })
+            $("#btn7").click(function () { $("#kutu7").toggle(); })
+            $("#btn8").click(function () { $("#kutu8").toggle(3000); })
+            $("#btn9").click(function () { $("#kutu9").show("fast"); })
+        });</script>
+    <style>
+        .kutu {
+            background-color: red;
+        }
+
+        #kutu4, #kutu5, #kutu6, #kutu9, #kutu8 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td colspan="2">Hemen gizleme</td>
+        </tr>
+        <tr>
+            <td item-width="100"><button id="btn1">Buton 1</button></td>
+            <td item-width="150"><div id="kutu1" class="kutu">Kutu 1</div></td>
+        </tr>
+        <tr>
+            <td colspan="2">Nesneyi yavaşça gizleme (10 sn)</td>
+        </tr>
+        <tr>
+            <td item-width="100"><button id="btn2">Buton2</button></td>
+            <td item-width="150"><div id="kutu2" class="kutu">Kutu 2</div></td>
+        </tr>
+        <tr>
+            <td colspan="2">Nesneyi yavaşça gizleme (slow)</td>
+        </tr>
+        <tr>
+            <td item-width="100"><button id="btn3">Buton 3</button></td>
+            <td item-width="150"><div id="kutu3" class="kutu">Kutu 3</div></td>
+        </tr>
+        <tr>
+            <td colspan="2">Gizli nesneyi görünür yap</td>
+        </tr>
+        <tr>
+            <td item-width="100"><button id="btn4">Buton 4                    </button></td>
+            <td item-width="150"><div id="kutu4" class="kutu">Kutu 4</div></td>
+        </tr>
+        <tr>
+            <td colspan="2">Gizli nesneyi yavaşça görünür yap(2 sn)</td>
+        </tr>
+        <tr>
+            <td item-width="100"><button id="btn5">Buton 5</button></td>
+            <td item-width="150"><div id="kutu5" class="kutu">Kutu 5</div></td>
+        </tr>
+        <tr>
+            <td colspan="2">Gizli nesneyi yavaşça görünür yap(slow)</td>
+        </tr>
+        <tr>
+            <td item-width="100"><button id="btn6">Buton 6</button></td>
+            <td item-width="150"><div id="kutu6" class="kutu">Kutu 6</div></td>
+        </tr>
+        <tr>
+            <td colspan="2">Toogle örneği</td>
+        </tr>
+        <tr>
+            <td item-width="100"><button id="btn7">Buton 7</button></td>
+            <td item-width="150"><div id="kutu7" class="kutu">Kutu 7</div></td>
+        </tr>
+        <tr>
+            <td colspan="2">Toogle örneği (3sn)</td>
+        </tr>
+        <tr>
+            <td item-width="100"><button id="btn8">Buton 8</button></td>
+            <td item-width="150"><div id="kutu8" class="kutu">Kutu 8</div></td>
+        </tr>
+        <tr>
+            <td colspan="2">Gizli nesneyi hızlıca görünür yap(fast)</td>
+        </tr>
+        <tr>
+            <td item-width="100"><button id="btn9">Buton 9</button></td>
+            <td item-width="150"><div id="kutu9" class="kutu">Kutu 9</div></td>
+        </tr>
+    </table>
+</body>
+</html>

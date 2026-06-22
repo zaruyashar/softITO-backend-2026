@@ -1,0 +1,83 @@
+﻿<html>
+<head>
+    <title>Jquery ile css özellikleri</title>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/jquery/dist/jquery.slim.min.js"></script>
+    <script src="lib/jquery/dist/jquery.slim.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+            integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+            crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#kutu1,#kutu2,#kutu3").css("color", "red");
+            })
+
+            $("#btn2").click(function () {
+                $("#kutu1,#kutu2,#kutu3").css("border", "2px solid blue");
+            })
+
+            $("#btn3").click(function () {
+                var genislik = parseInt($("#kutu1").css("width"));
+                genislik += 10;
+                $("#kutu1,#kutu2,#kutu3").css("width", genislik);
+            })
+
+            $("#btn4").click(function () {
+                var daralt = parseInt($("#kutu1").css("width"));
+                daralt -= 10;
+                $("#kutu1,#kutu2,#kutu3").css("width", daralt);
+            })
+        });
+    </script>
+
+
+    <style>
+        .kutu {
+            background-color: aqua;
+            padding: 3px;
+            width: 90px;
+        }
+
+        td {
+            padding: 6px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <table border="1">
+        <tr>
+            <td item-width="120">
+                <button id="btn1">
+                    Buton-1 basıldığında rengi kırmızı
+                </button>
+            </td>
+            <td item-width="150" rowspan="4">
+                <div id="kutu1" class="kutu">Kutu-1</div>
+                <div id="kutu2" class="kutu">Kutu-2</div>
+                <div id="kutu3" class="kutu">Kutu-3</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button id="btn2">
+                    Buton-2 basıldığında border:2px solid blue
+                </button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><button id="btn3">Buton-3 10px genişlet</button></td>
+        </tr>
+
+        <tr>
+            <td><button id="btn4">Buton-4 10px daralt</button></td>
+        </tr>
+    </table>
+</body>
+</html>
