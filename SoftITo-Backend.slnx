@@ -1,18 +1,29 @@
 <Solution>
-  <Project Path="ADONET-PROC/ADONET-PROC.csproj" Id="7aecd453-6932-4edd-9eb8-b473f99888e7" />
-  <Project Path="Arrays/Arrays.csproj" Id="92184c5e-2a22-47a0-8169-ad2ee17ff788" />
-  <Project Path="Banka/Banka.csproj" Id="1b7d8a2b-f11f-4670-9321-c578e05007b1" />
-  <Project Path="ComboBox/ComboBox.csproj" Id="2f0ccbb9-e655-4e6f-9e1b-6d03b041ca73" />
-  <Project Path="DbAppADONET/DbAppADONET.csproj" Id="6cc80935-1f7a-4e5b-8934-6ea3ccd164f8" />
-  <Project Path="EntityFrameworkDBFirst/EntityFrameworkDBFirst.csproj" Id="fd178d6a-bf1a-4e6e-b024-301cfe9a84ac" />
-  <Project Path="Forms_Intro/Forms_Intro.csproj" Id="ae276681-2174-4d04-a960-b64aa796faa2" />
-  <Project Path="Functions/Functions.csproj" Id="b70454b3-2a67-4887-b491-90cd00e80acd" />
-  <Project Path="Loops/Loops.csproj" Id="036b47b2-0876-43a2-b1aa-70c697574aea" />
-  <Project Path="ModelFirst/ModelFirst.csproj" Id="7ef4e866-1b5a-4230-ba27-c50936900895" />
-  <Project Path="MyMiniConsoleRestaurant/MyMiniConsoleRestaurant.csproj" Id="017aac0d-d8fb-4334-9057-5af4e5e91f0a" />
-  <Project Path="NejCafe/NejCafe.csproj" Id="77b1d1cb-3467-43d1-95cf-26c1af957908" />
-  <Project Path="NewFormProject/GroupBox.csproj" Id="ef9e6a34-8e2a-4b69-a400-d18630bee9fe" />
-  <Project Path="OOP/OOP.csproj" Id="84eadfa9-26b3-4096-a588-87a0408f4aac" />
-  <Project Path="OOP2/OOP2.csproj" Id="8a5eb3f5-d3b9-4ed0-8922-b2551d05c51b" />
-  <Project Path="Züccaciye/Züccaciye.csproj" Id="0e584541-af27-4c18-8c79-784e01613dda" />
+  <Folder Name="/IN-PERSON/">
+    <Project Path="IN-PERSON/CodeFirstJavaScriptApp/CodeFirstJavaScriptApp/CodeFirstJavaScriptApp.csproj" />
+    <Project Path="IN-PERSON/FirstApiApp/FirstApiApp/FirstApiApp.csproj" />
+    <Project Path="IN-PERSON/JQryApp/JQryApp/JQryApp.csproj" />
+    <Project Path="IN-PERSON/LoginApp/LoginApp/LoginApp.csproj" />
+    <Project Path="IN-PERSON/RzrPgsApp/RzrPgsApp/RzrPgsApp.csproj" />
+  </Folder>
+  <Folder Name="/ONLINE/">
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/Arrays/Arrays.csproj" Id="92184c5e-2a22-47a0-8169-ad2ee17ff788" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/Banka/Banka.csproj" Id="1b7d8a2b-f11f-4670-9321-c578e05007b1" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/ComboBox/ComboBox.csproj" Id="2f0ccbb9-e655-4e6f-9e1b-6d03b041ca73" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/DbAppADONET/DbAppADONET.csproj" Id="6cc80935-1f7a-4e5b-8934-6ea3ccd164f8" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/DORDUNCU-PROJE/DORDUNCU-PROJE.csproj" Id="8b2fece0-9ca6-4173-9e1d-d86d15f6ae5e" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/EntityFramework/EntityFramework.csproj" Id="2d246162-549c-4b9f-93fb-9ffeda7f65db" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/EntityFrameworkDBFirst/EntityFrameworkDBFirst.csproj" Id="fd178d6a-bf1a-4e6e-b024-301cfe9a84ac" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/Forms_Intro/Forms_Intro.csproj" Id="ae276681-2174-4d04-a960-b64aa796faa2" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/Functions/Functions.csproj" Id="b70454b3-2a67-4887-b491-90cd00e80acd" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/Intro/Intro.csproj" Id="38a10dbf-5b98-4445-8d44-90e6e23b9046" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/Loops/Loops.csproj" Id="036b47b2-0876-43a2-b1aa-70c697574aea" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/ModelFirst/ModelFirst.csproj" Id="7ef4e866-1b5a-4230-ba27-c50936900895" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/MyMiniConsoleRestaurant/MyMiniConsoleRestaurant.csproj" Id="017aac0d-d8fb-4334-9057-5af4e5e91f0a" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/NewFormProject/GroupBox.csproj" Id="ef9e6a34-8e2a-4b69-a400-d18630bee9fe" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/OOP/OOP.csproj" Id="84eadfa9-26b3-4096-a588-87a0408f4aac" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/OOP2/OOP2.csproj" Id="8a5eb3f5-d3b9-4ed0-8922-b2551d05c51b" />
+    <Project Path="../../../../../ITO Konsol Uygulamaları/SoftITO-Backend/Züccaciye/Züccaciye.csproj" Id="0e584541-af27-4c18-8c79-784e01613dda" />
+    <Project Path="ONLINE/ADONET-PROC/ADONET-PROC.csproj" Id="7aecd453-6932-4edd-9eb8-b473f99888e7" />
+  </Folder>
 </Solution>
