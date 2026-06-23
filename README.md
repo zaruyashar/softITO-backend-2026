@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggCGvnk5W/giphy.gif" width="250" alt="Coding and Learning GIF">
 
-  # 🚀 SoftITo Backend Engineering Journey: 300 Hours to Mastery
+  # 🚀 SoftITo Backend Engineering Journey: 320 Hours to Mastery
 
   *The complete digital diary of my backend engineering transformation with Istanbul Chamber of Commerce. From the foundational online bootcamp to the intensive in-person academy at Dünya Ticaret Merkezi.*
 </div>
