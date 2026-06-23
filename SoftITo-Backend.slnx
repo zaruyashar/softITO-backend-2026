@@ -1,5 +1,7 @@
 <Solution>
   <Folder Name="/IN-PERSON/">
+    <Project Path="../../../OneDrive/Desktop/mvc-api-project/bridge-api-project/bridge-api-project/bridge-api-project.csproj" />
+    <Project Path="../../../OneDrive/Desktop/mvc-api-project/bridge-mvc-project/bridge-mvc-project/bridge-mvc-project.csproj" />
     <Project Path="IN-PERSON/CodeFirstJavaScriptApp/CodeFirstJavaScriptApp/CodeFirstJavaScriptApp.csproj" />
     <Project Path="IN-PERSON/FirstApiApp/FirstApiApp/FirstApiApp.csproj" />
     <Project Path="IN-PERSON/JQryApp/JQryApp/JQryApp.csproj" />
