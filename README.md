@@ -25,8 +25,8 @@ Here are the major projects developed during the face-to-face academy phase. I a
 | **3: MOVIFY 🎥** | *An n-tier movie management application utilizing Code-First Entity Framework. Features secure user authentication and dynamic PDF/Excel data export functionalities on listing pages.* | [📁 Go to Repository](https://github.com/zaruyashar/movify) |
 | **4: SW-QA 🔍** | *A Razor Pages web application built with ADO.NET to manage software quality assurance records. Includes admin CRUD operations for non-relational tables and seamless PDF/Excel listing exports.* | [📁 Go to Repository](https://github.com/zaruyashar/sw-qa) |
 | **5: TECHHUB 🖥️** | *An IT helpdesk and asset management dashboard built with n-tier architecture, Code-First EF, and jQuery. Features admin CRUD, data exporting, and a foundational structure for future Role-Based Access Control (RBAC).* | [📁 Go to Repository](https://github.com/zaruyashar/techhub) |
-| **6: SWAGAPI 🌐** | My first RESTful Web API project. Built with ASP.NET Core, it focuses on professional software standards, HTTP verbs, and robust controller architecture using Swagger. | [📁 Go to Repository](https://github.com/zaruyashar/swag-api) |
-| **7: LIBRIS 📚** | A decoupled library management system featuring a .NET 8 Web API consumed by an MVC frontend. Built with Code-First Entity Framework, it leverages custom DTOs and Newtonsoft JSON for secure data transfer and robust admin CRUD operations. | [📁 Go to Repository](https://github.com/zaruyashar/libris) |
+| **6: SWAGAPI 🌐** | *My first RESTful Web API project. Built with ASP.NET Core, it focuses on professional software standards, HTTP verbs, and robust controller architecture using Swagger.* | [📁 Go to Repository](https://github.com/zaruyashar/swag-api) |
+| **7: LIBRIS 📚** | *A decoupled library management system featuring a .NET 8 Web API consumed by an MVC frontend. Built with Code-First Entity Framework, it leverages custom DTOs and Newtonsoft JSON for secure data transfer and robust admin CRUD operations.* | [📁 Go to Repository](https://github.com/zaruyashar/libris) |
 
 
 <br>
