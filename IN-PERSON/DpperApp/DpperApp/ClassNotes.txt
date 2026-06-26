@@ -1,0 +1,6 @@
+﻿Indexing: (Potential Interview/Exam Question)
+Used to accelerate SQL queries. It performs searches by utilizing a tree structure. (If you are unfamiliar with tree structures, research data structures and trees. Review their specific use cases and implementation scenarios. This is explained in the course recording shortly before the 33rd minute.)
+
+Clustered Index: There can only be one per table.
+
+Non-Clustered Index: Up to 999 can be defined for a single table.
