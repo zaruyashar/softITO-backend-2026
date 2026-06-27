@@ -30,7 +30,7 @@ Here are the major projects developed during the face-to-face academy phase. I a
 | **8: CRYPTIDCARE 👾** | *An internal admin dashboard for managing cryptid containment operations — including entity tracking, enclosure management, keeper assignments, and feeding schedules.* | [📁 Go to Repository]([https://github.com/zaruyashar/libris](https://github.com/zaruyashar/cryptid-care-facility)) |
 | **9: To Be Completed** | *Details coming soon...* | *Link coming soon...* |
 | **10: To Be Completed** | *Details coming soon...* | *Link coming soon...* |
-| **[11. FINAL PROJECT]: To Be Completed** | *Details coming soon...* | *Link coming soon...* |
+| **11: [FINAL PROJECT] To Be Completed** | *Details coming soon...* | *Link coming soon...* |
 
 
 <br>
