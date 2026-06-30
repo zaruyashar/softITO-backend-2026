@@ -20,7 +20,7 @@ Here are the major projects developed during the face-to-face academy phase. I a
 
 | Project Name | Description | Link |
 | :--- | :--- | :--- |
-| **1: To Be Completed** | *Details coming soon...* | *Link coming soon...* |
+| **1: TheCAFERT ☕** | *Cafert is a C# .NET Core MVC web application for a café, built with Entity Framework Core and MS SQL Server, featuring a public landing page plus an admin dashboard for managing menu items, featured dishes, and team members.* | [📁 Go to Repository](https://github.com/zaruyashar/cafert/) |
 | **2: CANDYSHOP 🍬** | *A visually striking, code-first MVC application that features a fully dynamic contact system equipped with sliding window rate limiting (3 messages per 5 minutes) and a highly polished, elegant administrative dashboard.* | [📁 Go to Repository](https://github.com/zaruyashar/candyshop) |
 | **3: MOVIFY 🎥** | *An n-tier movie management application utilizing Code-First Entity Framework. Features secure user authentication and dynamic PDF/Excel data export functionalities on listing pages.* | [📁 Go to Repository](https://github.com/zaruyashar/movify) |
 | **4: SW-QA 🔍** | *A Razor Pages web application built with ADO.NET to manage software quality assurance records. Includes admin CRUD operations for non-relational tables and seamless PDF/Excel listing exports.* | [📁 Go to Repository](https://github.com/zaruyashar/sw-qa) |
