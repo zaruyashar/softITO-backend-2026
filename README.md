@@ -28,7 +28,7 @@ Here are the major projects developed during the face-to-face academy phase. I a
 | **6: SWAGAPI 🌐** | *My first RESTful Web API project. Built with ASP.NET Core, it focuses on professional software standards, HTTP verbs, and robust controller architecture using Swagger.* | [📁 Go to Repository](https://github.com/zaruyashar/swag-api) |
 | **7: LIBRIS 📚** | *A decoupled library management system featuring a .NET 8 Web API consumed by an MVC frontend. Built with Code-First Entity Framework, it leverages custom DTOs and Newtonsoft JSON for secure data transfer and robust admin CRUD operations.* | [📁 Go to Repository](https://github.com/zaruyashar/libris) |
 | **8: CRYPTIDCARE 👾** | *An internal admin dashboard for managing cryptid containment operations that's built using Dapper, C# .Net Core, T-SQL, Razor Views, and Microsoft Identity login (to be incorporated later).* | [📁 Go to Repository](https://github.com/zaruyashar/cryptid-care-facility) |
-| **9: To Be Completed** | *Details coming soon...* | *Link coming soon...* |
+| **9: THEVENUE 🥂** | *A decoupled venue management system built with an ASP.NET Core Web API and an MVC consumer client. Features high-performance data access using Dapper and T-SQL stored procedures, the Repository pattern, DTOs, and sliding window rate limiting for API security.* | [📁 Go to Repository](https://github.com/zaruyashar/the-venue/) |
 | **10: To Be Completed** | *Details coming soon...* | *Link coming soon...* |
 | **11: [FINAL PROJECT] To Be Completed** | *Details coming soon...* | *Link coming soon...* |
 
