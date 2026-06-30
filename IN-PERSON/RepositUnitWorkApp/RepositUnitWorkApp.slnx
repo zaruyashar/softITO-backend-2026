@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="RepositUnitWorkApp.Data/RepositUnitWorkApp.Data.csproj" />
+  <Project Path="RepositUnitWorkApp.Model/RepositUnitWorkApp.Model.csproj" />
+  <Project Path="RepositUnitWorkApp/RepositUnitWorkApp.csproj" />
+</Solution>
