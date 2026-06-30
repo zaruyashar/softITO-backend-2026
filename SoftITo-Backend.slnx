@@ -1,5 +1,8 @@
 <Solution>
   <Folder Name="/IN-PERSON/">
+    <Project Path="../RepositUnitWorkApp/RepositUnitWorkApp.Data/RepositUnitWorkApp.Data.csproj" />
+    <Project Path="../RepositUnitWorkApp/RepositUnitWorkApp.Model/RepositUnitWorkApp.Model.csproj" />
+    <Project Path="../RepositUnitWorkApp/RepositUnitWorkApp/RepositUnitWorkApp.csproj" />
     <Project Path="IN-PERSON/bridge-api-project/bridge-api-project/bridge-api-project.csproj" />
     <Project Path="IN-PERSON/bridge-mvc-project/bridge-mvc-project/bridge-mvc-project.csproj" />
     <Project Path="IN-PERSON/CodeFirstJavaScriptApp/CodeFirstJavaScriptApp/CodeFirstJavaScriptApp.csproj" />
