@@ -29,7 +29,7 @@ Here are the major projects developed during the face-to-face academy phase. I a
 | **7: LIBRIS 📚** | *A decoupled library management system featuring a .NET 8 Web API consumed by an MVC frontend. Built with Code-First Entity Framework, it leverages custom DTOs and Newtonsoft JSON for secure data transfer and robust admin CRUD operations.* | [📁 Go to Repository](https://github.com/zaruyashar/libris) |
 | **8: CRYPTIDCARE 👾** | *An internal admin dashboard for managing cryptid containment operations that's built using Dapper, C# .Net Core, T-SQL, Razor Views, and Microsoft Identity login (to be incorporated later).* | [📁 Go to Repository](https://github.com/zaruyashar/cryptid-care-facility) |
 | **9: THEVENUE 🥂** | *A decoupled venue management system built with an ASP.NET Core Web API and an MVC consumer client. Features high-performance data access using Dapper and T-SQL stored procedures, the Repository pattern, DTOs, and sliding window rate limiting for API security.* | [📁 Go to Repository](https://github.com/zaruyashar/the-venue/) |
-| **10: To Be Completed** | *Details coming soon...* | *Link coming soon...* |
+| **10: GAMECAFE 🎲** | *A .NET 10/ASP.NET Core MVC platform for board game cafés that handles catalog browsing, rentals, and role-based staff/customer access through a clean, repository-pattern architecture backed by EF Core and SQL Server. It layers in performance and polish via in-memory caching, Excel/PDF reporting (ClosedXML/QuestPDF), custom audit logging, and a responsive neo-brutalist Bootstrap UI.* | [📁 Go to Repository](https://github.com/zaruyashar/game-cafe/) |
 | **11: [FINAL PROJECT] To Be Completed** | *Details coming soon...* | *Link coming soon...* |
 
 
