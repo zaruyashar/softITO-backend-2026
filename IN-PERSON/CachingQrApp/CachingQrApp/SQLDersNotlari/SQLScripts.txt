@@ -1,0 +1,20 @@
+﻿Create a DB called: School
+
+// DB Table Create
+
+CREATE TABLE [dbo].[ogrenci] (
+[OgrenciNo] INT          NOT NULL,
+[Adsoyad]   VARCHAR (50) NULL,
+[Yas]       INT          NULL,
+[Bolum]     VARCHAR (50) NULL,
+[Puan] INT NULL,
+[BursTutar] INT NULL,
+[DersKredisi] INT NULL,
+[TcNo] CHAR(11) NULL,
+[Email] VARCHAR(50) NULL,
+[Şehir] VARCHAR(50) NULL,
+PRIMARY KEY CLUSTERED ([OgrenciNo] ASC)
+);
+
+
+// Constraints: 1) PK, 2) FK, 3) UQ (unique), 4) Default, 5) Check cons 

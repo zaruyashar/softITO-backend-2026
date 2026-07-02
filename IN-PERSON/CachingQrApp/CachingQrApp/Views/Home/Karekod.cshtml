@@ -1,0 +1,13 @@
+﻿<div class="text-center" style="margin-top:50px;">
+    <h2>Telefonunuzu ile Karekodu taratın</h2>
+    <p>Bu karekod sizi başka bir web sitesine güvenli bir şekilde yönlendirecektir</p>
+    @if (ViewBag.KareKodGorseli != null)
+    {
+        <img src="@ViewBag.KareKodGorseli" alt="Yönlendirme Karekodu" style="width:250px;height:250px;border:1px solid #ccc;padding:10px;border-radius:8px;" />
+    }
+    else
+    {
+        <p style="color:red;">Karekod oluştururken bir hata oluştu</p>
+    }
+
+</div>
