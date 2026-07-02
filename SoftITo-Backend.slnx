@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/IN-PERSON/">
+    <Project Path="../CachingQrApp/CachingQrApp/CachingQrApp.csproj" />
     <Project Path="../RepositUnitWorkApp/RepositUnitWorkApp.Data/RepositUnitWorkApp.Data.csproj" />
     <Project Path="../RepositUnitWorkApp/RepositUnitWorkApp.Model/RepositUnitWorkApp.Model.csproj" />
     <Project Path="../RepositUnitWorkApp/RepositUnitWorkApp/RepositUnitWorkApp.csproj" />
