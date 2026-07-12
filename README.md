@@ -10,9 +10,9 @@
 
 ## 🏢 Phase 2: The In-Person Academy
 
-Welcome to the heart of the SoftITo Backend Face-to-Face Training! We are stationed at the Dünya Ticaret Merkezi, five days a week, in a cozy and highly collaborative learning environment. 
+Welcome to the heart of the SoftITo Backend Face-to-Face Training! We were stationed at the Dünya Ticaret Merkezi, five days a week, in a cozy and highly collaborative learning environment. 
 
-This phase is all about deep immersion. We aren't just learning concepts; we are breathing backend engineering and building projects almost every single day. By the end of this phase, combined with the online bootcamp, I will have completed an intensive 320-hour journey.
+This phase was all about deep immersion. We didn't just learning concepts; we breathed backend engineering and building projects almost every single day. By the end of this phase, combined with the online bootcamp, I have completed an intensive 320-hour journey.
 
 ### 🛠️ In-Person Capstone Projects
 
