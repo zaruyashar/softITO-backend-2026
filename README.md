@@ -14,7 +14,19 @@ Welcome to the heart of the SoftITo Backend Face-to-Face Training! We were stati
 
 This phase was all about deep immersion. We didn't just learning concepts; we breathed backend engineering and building projects almost every single day. By the end of this phase, combined with the online bootcamp, I have completed an intensive 320-hour journey.
 
-### 🛠️ In-Person Capstone Projects
+### ⚙️ Tech Stack
+- **Languages & Frameworks:** C#, .NET (Core, 8/10), ASP.NET Core MVC & Web API
+- **Data Access:** Entity Framework Core (Code-First), Dapper, ADO.NET, T-SQL Stored Procedures, MS SQL Server
+- **Architecture:** N-Tier design, Repository & Unit of Work patterns, DTOs, RESTful API principles
+- **Auth & Security:** ASP.NET Identity, Google OAuth, JWT, Role-Based Access Control (RBAC), sliding window rate limiting
+- **AI Integration:** Hugging Face-powered review moderation
+- **Reporting & Exports:** PDF/Excel generation (QuestPDF, ClosedXML), QR code generation
+- **Front-End:** Razor Views/Pages, jQuery, JavaScript, Bootstrap, HTML/CSS
+- **Performance & Ops:** In-memory caching, custom audit logging
+- **Deployment:** Live production hosting behind Cloudflare (Ekomart)
+- **Tools:** Swagger, Newtonsoft.Json
+
+### 🛠️ Capstone Projects
 
 Here are the major projects developed during the face-to-face academy phase. Across ten homework projects and one final capstone, I worked through the curriculum building complex APIs and mastering architectural patterns.
 
